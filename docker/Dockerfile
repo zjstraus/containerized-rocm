@@ -33,12 +33,7 @@ ARG LLAMACPP_BUILD
 ADD --unpack=true https://github.com/ggml-org/llama.cpp/archive/refs/tags/$LLAMACPP_BUILD.tar.gz /usr/src/
 RUN mv /usr/src/llama.cpp-$LLAMACPP_BUILD /usr/src/llama.cpp
 
-FROM llama_dl AS llama_ui
-
-ADD build-llama-ui.sh /usr/src/
-RUN /bin/bash -c "cd /usr/src; ./build-llama-ui.sh"
-
-FROM llama_ui AS llama_build
+FROM llama_dl AS llama_build
 
 ENV AMDGPU_TARGET=${AMDGPU_TARGET}
 
