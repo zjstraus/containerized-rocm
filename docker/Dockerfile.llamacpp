@@ -2,16 +2,21 @@ ARG ROCM_BASE_IMAGE=scratch
 FROM ${ROCM_BASE_IMAGE} AS llama_dl
 
 ARG LLAMACPP_BUILD
+ARG LLAMACPP_BOOSTS
 
-ADD --unpack=true https://github.com/ggml-org/llama.cpp/archive/refs/tags/$LLAMACPP_BUILD.tar.gz /usr/src/
-RUN mv /usr/src/llama.cpp-$LLAMACPP_BUILD /usr/src/llama.cpp
+ADD --keep-git-dir https://github.com/ggml-org/llama.cpp.git#${LLAMACPP_BUILD} /usr/src/llama.cpp
+ADD --keep-git-dir https://github.com/stew675/llama-cpp-rdna-boosts.git#${LLAMACPP_BOOSTS} /usr/src/llama-cpp-rdna-boosts
 
 FROM llama_dl AS llama_build
 
 ARG AMDGPU_TARGET
 ENV AMDGPU_TARGET=${AMDGPU_TARGET}
 
+RUN git config --global user.name "Docker Build" && \
+    git config --global user.email "buildenv@example.com"
+
 ADD build-llama.sh /usr/src/
+RUN /bin/bash -c "cd /usr/src; ./llama-cpp-rdna-boosts/scripts/apply-all.sh /usr/src/llama.cpp /usr/src/llama-cpp-rdna-boosts"
 RUN /bin/bash -c "cd /usr/src; ./build-llama.sh"
 
 FROM llama_build AS llama
