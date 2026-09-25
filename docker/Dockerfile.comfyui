@@ -32,6 +32,36 @@ RUN sed -e '/^torchaudio$/d' -i /opt/comfyui/requirements.txt
 RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade -r /opt/comfyui/requirements.txt
 RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade -r /opt/comfyui/manager_requirements.txt
 
-FROM comfyui_dl
+FROM comfyui_dl AS comfyui_ext
 
-ENTRYPOINT ["/opt/venv/bin/python", "/opt/comfyui/main.py", "--listen=0.0.0.0", "--enable-manager"]
+ADD https://github.com/Fannovel16/comfyui_controlnet_aux.git /opt/comfyui/custom_nodes/comfyui_controlnet_aux
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/comfyui_controlnet_aux/requirements.txt
+
+ADD https://github.com/cubiq/ComfyUI_essentials.git /opt/comfyui/custom_nodes/ComfyUI_essentials
+#RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI_essentials/requirements.txt
+# `pixeloe` in the requirements file seems to not like installing when running on an arch host
+RUN --mount=type=cache,target=/root/.cache/pip pip install numba colour-science rembg transparent-background
+
+ADD https://github.com/yolain/ComfyUI-Easy-Use.git /opt/comfyui/custom_nodes/ComfyUI-Easy-Use
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-Easy-Use/requirements.txt
+
+ADD https://github.com/rgthree/rgthree-comfy.git /opt/comfyui/custom_nodes/rgthree-comfy
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/rgthree-comfy/requirements.txt
+
+ADD https://github.com/kijai/ComfyUI-KJNodes.git /opt/comfyui/custom_nodes/ComfyUI-KJNodes
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-KJNodes/requirements.txt
+
+ADD https://github.com/ltdrdata/ComfyUI-Impact-Pack.git /opt/comfyui/custom_nodes/ComfyUI-Impact-Pack
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
+
+ADD https://github.com/Alectriciti/comfyui-adaptiveprompts.git /opt/comfyui/custom_nodes/comfyui-adaptiveprompts
+ADD https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git /opt/comfyui/custom_nodes/ComfyUI-Custom-Scripts
+ADD https://github.com/Smirnov75/ComfyUI-mxToolkit.git /opt/comfyui/custom_nodes/ComfyUI-mxToolkit
+ADD https://github.com/sipherxyz/comfyui-art-venture.git /opt/comfyui/custom_nodes/comfyui-art-venture
+ADD https://github.com/aria1th/ComfyUI-LogicUtils.git /opt/comfyui/custom_nodes/ComfyUI-LogicUtils
+ADD https://github.com/TinyTerra/ComfyUI_tinyterraNodes.git /opt/comfyui/custom_nodes/ComfyUI_tinnyterraNodes
+ADD https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /opt/comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+
+FROM comfyui_ext
+
+ENTRYPOINT ["/opt/venv/bin/python", "/opt/comfyui/main.py", "--listen=0.0.0.0", "--enable-manager", "--port=8000"]
