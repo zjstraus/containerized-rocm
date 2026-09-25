@@ -5,8 +5,8 @@ usage() {
   cat >&2 <<EOF
 Usage: $0 [options]
 
-Ensures the ROCm llama.cpp Docker image exists (building it if necessary)
-and prints the image reference to stdout.
+Ensures the ROCm llama.cpp and ComfyUI Docker images exist (building if necessary)
+and prints the image references to stdout.
 
 Options:
   -h, --help    Show this help and exit.
@@ -15,9 +15,10 @@ Environment:
   AMD_GFX_TARGET    GPU target to build for (e.g. gfx1101). If unset, the
                     target is detected from 'rocminfo' on the local machine.
   LLAMACPP_TAG      llama.cpp build tag (defaults to whatever was latest on the last update of this script).
+  COMFYUI_TAG       ComfyUI build tag (defaults to whatever was latest on the last update of this script).
 
 Output:
-  The image reference 'zjstraus-rocm-<target>-<tag>' is written to stdout;
+  The image reference 'zjstraus-rocm-<target>-<program>-<tag>' is written to stdout;
   all diagnostics and build logs go to stderr.
 EOF
 }
@@ -58,18 +59,40 @@ fi
 echo "Image will target $AMD_GFX_TARGET" >&2
 
 if [[ -z "$LLAMACPP_TAG" ]]; then
-  LLAMACPP_TAG=b10936
+  LLAMACPP_TAG=b11071
 fi
 echo "Image will build llama.cpp $LLAMACPP_TAG" >&2
 
+if [[ -z "$COMFYUI_TAG" ]]; then
+  COMFYUI_TAG=v0.37.0
+fi
+echo "Image will build comfyui $COMFYUI_TAG" >&2
+
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-DOCKER_TAG="zjstraus-rocm-$AMD_GFX_TARGET-$LLAMACPP_TAG"
-if docker image inspect "$DOCKER_TAG" &> /dev/null; then
-  echo "Docker image $DOCKER_TAG already exists" >&2
+ROOT_IMAGE="zjstraus-rocm-$AMD_GFX_TARGET"
+if docker image inspect "$ROOT_IMAGE" &> /dev/null; then
+  echo "Docker image $ROOT_IMAGE already exists" >&2
 else
-  echo "Building docker image $DOCKER_TAG" >&2
-  docker build --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "LLAMACPP_BUILD=$LLAMACPP_TAG" -t "$DOCKER_TAG" -f "$SCRIPT_DIR/docker/Dockerfile" "$SCRIPT_DIR/docker/" >&2
+  echo "Building docker image $ROOT_IMAGE" >&2
+  docker build --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" -t "$ROOT_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.rocmbase" "$SCRIPT_DIR/docker/" >&2
 fi
 
-echo "$DOCKER_TAG"
+COMFYUI_IMAGE="zjstraus-rocm-$AMD_GFX_TARGET-comfyui-$COMFYUI_TAG"
+if docker image inspect "$COMFYUI_IMAGE" &> /dev/null; then
+  echo "Docker image $COMFYUI_IMAGE already exists" >&2
+else
+  echo "Building docker image $COMFYUI_IMAGE" >&2
+  docker build --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "COMFYUI_BUILD=$COMFYUI_TAG" -t "$COMFYUI_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.comfyui" "$SCRIPT_DIR/docker/" >&2
+fi
+
+LLAMACPP_IMAGE="zjstraus-rocm-$AMD_GFX_TARGET-llamacpp-$LLAMACPP_TAG"
+if docker image inspect "$LLAMACPP_IMAGE" &> /dev/null; then
+  echo "Docker image $LLAMACPP_IMAGE already exists" >&2
+else
+  echo "Building docker image $LLAMACPP_IMAGE" >&2
+  docker build --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "LLAMACPP_BUILD=$LLAMACPP_TAG" -t "$LLAMACPP_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.llamacpp" "$SCRIPT_DIR/docker/" >&2
+fi
+
+echo "$COMFYUI_IMAGE"
+echo "$LLAMACPP_IMAGE"

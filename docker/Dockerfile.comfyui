@@ -1,0 +1,37 @@
+ARG ROCM_BASE_IMAGE=scratch
+FROM ${ROCM_BASE_IMAGE} AS comfy_venv
+
+ARG VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv ${VIRTUAL_ENV}
+ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
+
+FROM comfy_venv AS torch
+
+ARG AMDGPU_TARGET
+ENV AMDGPU_TARGETS=${AMDGPU_TARGET}
+ENV FLASH_ATTENTION_TRITON_AMD_ENABLE=TRUE
+ENV TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1
+
+RUN --mount=type=cache,target=/root/.cache/pip pip install --pre --index-url https://stable.repo.amd.com/rocm/whl-next/ \
+    "torch[device-$AMDGPU_TARGET]" \
+    "torchvision[device-$AMDGPU_TARGET]" \
+    "torchaudio"
+
+RUN --mount=type=cache,target=/root/.cache/pip pip install --no-build-isolation flash-attn
+
+FROM torch AS comfyui_dl
+
+ARG COMFYUI_BUILD
+
+ADD https://github.com/Comfy-Org/ComfyUI.git#${COMFYUI_BUILD} /opt/comfyui
+
+RUN sed -e '/^torch$/d' -i /opt/comfyui/requirements.txt
+RUN sed -e '/^torchvision$/d' -i /opt/comfyui/requirements.txt
+RUN sed -e '/^torchaudio$/d' -i /opt/comfyui/requirements.txt
+
+RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade -r /opt/comfyui/requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade -r /opt/comfyui/manager_requirements.txt
+
+FROM comfyui_dl
+
+ENTRYPOINT ["/opt/venv/bin/python", "/opt/comfyui/main.py", "--listen=0.0.0.0", "--enable-manager"]

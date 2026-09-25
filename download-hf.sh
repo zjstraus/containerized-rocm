@@ -30,7 +30,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 # ensure-containers.sh prints the image reference to stdout; build/detection
 # logs go to stderr, so capturing stdout yields just the tag. If it fails
 # (e.g. no GPU detected and no AMD_GFX_TARGET), set -e aborts with its code.
-image="$("$SCRIPT_DIR/ensure-containers.sh")"
+image="$("$SCRIPT_DIR/ensure-containers.sh" | grep llamacpp)"
 if [[ -z "$image" ]]; then
   echo "error: ensure-containers.sh did not return an image reference"
   exit 1

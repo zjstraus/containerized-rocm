@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
   libquadmath0 \
   npm \
   perl \
+  pip \
+  python3.14-venv \
   wget
 
 FROM initial_os AS rocm
@@ -25,21 +27,3 @@ RUN apt-get update && apt-get -y install \
 
 ADD rocm.ld.conf /etc/ld.so.conf.d/rocm.conf
 RUN ldconfig
-
-FROM rocm AS llama_dl
-
-ARG LLAMACPP_BUILD
-
-ADD --unpack=true https://github.com/ggml-org/llama.cpp/archive/refs/tags/$LLAMACPP_BUILD.tar.gz /usr/src/
-RUN mv /usr/src/llama.cpp-$LLAMACPP_BUILD /usr/src/llama.cpp
-
-FROM llama_dl AS llama_build
-
-ENV AMDGPU_TARGET=${AMDGPU_TARGET}
-
-ADD build-llama.sh /usr/src/
-RUN /bin/bash -c "cd /usr/src; ./build-llama.sh"
-
-FROM llama_build AS llama
-ENV HF_HUB_CACHE=/mnt/hub
-RUN mkdir /mnt/hub
