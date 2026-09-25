@@ -54,6 +54,9 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custo
 ADD https://github.com/ltdrdata/ComfyUI-Impact-Pack.git /opt/comfyui/custom_nodes/ComfyUI-Impact-Pack
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
 
+ADD https://github.com/iGavroche/rocm-ninodes.git /opt/comfyui/custom_nodes/ComfyUI-ROCM-Optimized-VAE
+RUN --mount=type=cache,target=/root/.cache/pip /bin/bash -c "cd /opt/comfyui/custom_nodes/ComfyUI-ROCM-Optimized-VAE; python install.py"
+
 ADD https://github.com/Alectriciti/comfyui-adaptiveprompts.git /opt/comfyui/custom_nodes/comfyui-adaptiveprompts
 ADD https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git /opt/comfyui/custom_nodes/ComfyUI-Custom-Scripts
 ADD https://github.com/Smirnov75/ComfyUI-mxToolkit.git /opt/comfyui/custom_nodes/ComfyUI-mxToolkit
