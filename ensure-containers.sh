@@ -60,11 +60,11 @@ fi
 echo "Image will target $AMD_GFX_TARGET" >&2
 
 if [[ -z "$LLAMACPP_TAG" ]]; then
-  LLAMACPP_TAG=84e76d8a23162eca70490da131945ebec1f09bf4
+  LLAMACPP_TAG=a55e952b85741249fcbf120bcd9d47cf2b1f6e48
 fi
 echo "Image will build llama.cpp $LLAMACPP_TAG" >&2
 if [[ -z "$LLAMACPP_BOOSTS_TAG" ]]; then
-  LLAMACPP_BOOSTS_TAG=v16-84e76d8a2-r3
+  LLAMACPP_BOOSTS_TAG=v16-a55e952b8-r11
 fi
 echo "Image will build llama-cpp-rdna-boosts $LLAMACPP_BOOSTS_TAG" >&2
 
