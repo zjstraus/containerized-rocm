@@ -20,10 +20,11 @@ ADD rocm-apt.gpg /etc/apt/keyrings/amdrocm.gpg
 ADD rocm-apt.sources /etc/apt/sources.list.d/amdrocm-stable.sources
 
 ARG AMDGPU_TARGET
+ARG ROCM_VERSION
 
 RUN apt-get update && apt-get -y install \
-  amdrocm10.0-$AMDGPU_TARGET \
-  amdrocm-core-sdk10.0-$AMDGPU_TARGET
+  amdrocm$ROCM_VERSION-$AMDGPU_TARGET \
+  amdrocm-core-sdk$ROCM_VERSION-$AMDGPU_TARGET
 
 ADD rocm.ld.conf /etc/ld.so.conf.d/rocm.conf
 RUN ldconfig

@@ -17,6 +17,7 @@ Environment:
   LLAMACPP_TAG         llama.cpp build tag (defaults to something recent as of the last update to this script).
   LLAMACPP_BOOSTS_TAG  llama-cpp-rdna-boosts target tag (defaults to latest compatible with LLAMACPP_TAG)
   COMFYUI_TAG          ComfyUI build tag (defaults to whatever was latest on the last update of this script).
+  ROCM_VERSION         ROCm version to install in the base image (defaults to 10.1).
 
 Output:
   The image reference 'zjstraus-rocm-<target>-<program>-<tag>' is written to stdout;
@@ -73,17 +74,22 @@ if [[ -z "$COMFYUI_TAG" ]]; then
 fi
 echo "Image will build comfyui $COMFYUI_TAG" >&2
 
+if [[ -z "$ROCM_VERSION" ]]; then
+  ROCM_VERSION=10.1
+fi
+echo "Image will install ROCm $ROCM_VERSION" >&2
+
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-ROOT_IMAGE="zjstraus-rocm-$AMD_GFX_TARGET"
+ROOT_IMAGE="zjstraus-rocm-$ROCM_VERSION-$AMD_GFX_TARGET"
 if docker image inspect "$ROOT_IMAGE" &> /dev/null; then
   echo "Docker image $ROOT_IMAGE already exists" >&2
 else
   echo "Building docker image $ROOT_IMAGE" >&2
-  docker build --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" -t "$ROOT_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.rocmbase" "$SCRIPT_DIR/docker/" >&2
+  docker build --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "ROCM_VERSION=$ROCM_VERSION" -t "$ROOT_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.rocmbase" "$SCRIPT_DIR/docker/" >&2
 fi
 
-COMFYUI_IMAGE="zjstraus-rocm-$AMD_GFX_TARGET-comfyui-$COMFYUI_TAG"
+COMFYUI_IMAGE="$ROOT_IMAGE-comfyui-$COMFYUI_TAG"
 if docker image inspect "$COMFYUI_IMAGE" &> /dev/null; then
   echo "Docker image $COMFYUI_IMAGE already exists" >&2
 else
@@ -91,7 +97,7 @@ else
   docker build --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "COMFYUI_BUILD=$COMFYUI_TAG" -t "$COMFYUI_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.comfyui" "$SCRIPT_DIR/docker/" >&2
 fi
 
-LLAMACPP_IMAGE="zjstraus-rocm-$AMD_GFX_TARGET-llamacpp-$LLAMACPP_TAG"
+LLAMACPP_IMAGE="$ROOT_IMAGE-llamacpp-$LLAMACPP_TAG"
 if docker image inspect "$LLAMACPP_IMAGE" &> /dev/null; then
   echo "Docker image $LLAMACPP_IMAGE already exists" >&2
 else
