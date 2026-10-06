@@ -29,8 +29,8 @@ RUN sed -e '/^torch$/d' -i /opt/comfyui/requirements.txt
 RUN sed -e '/^torchvision$/d' -i /opt/comfyui/requirements.txt
 RUN sed -e '/^torchaudio$/d' -i /opt/comfyui/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade -r /opt/comfyui/requirements.txt
-RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade -r /opt/comfyui/manager_requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/manager_requirements.txt
 
 FROM comfyui_dl AS comfyui_ext
 
