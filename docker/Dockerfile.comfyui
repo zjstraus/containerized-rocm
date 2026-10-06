@@ -68,4 +68,4 @@ ADD https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /opt/comfyui/cus
 
 FROM comfyui_ext
 
-ENTRYPOINT ["/opt/venv/bin/python", "/opt/comfyui/main.py", "--listen=0.0.0.0", "--enable-manager", "--port=8000"]
+ENTRYPOINT ["/opt/venv/bin/python", "/opt/comfyui/main.py", "--listen=0.0.0.0", "--port=8000"]
