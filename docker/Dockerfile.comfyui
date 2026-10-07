@@ -9,8 +9,6 @@ FROM comfy_venv AS torch
 
 ARG AMDGPU_TARGET
 ENV AMDGPU_TARGETS=${AMDGPU_TARGET}
-ENV FLASH_ATTENTION_TRITON_AMD_ENABLE=TRUE
-ENV TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1
 
 RUN --mount=type=cache,target=/root/.cache/pip pip install --pre --index-url https://stable.repo.amd.com/rocm/whl-next/ \
     "torch[device-$AMDGPU_TARGET]" \

@@ -22,6 +22,9 @@ ADD rocm-apt.sources /etc/apt/sources.list.d/amdrocm-stable.sources
 ARG AMDGPU_TARGET
 ARG ROCM_VERSION
 
+ENV FLASH_ATTENTION_TRITON_AMD_ENABLE=TRUE
+ENV TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1
+
 RUN apt-get update && apt-get -y install \
   amdrocm$ROCM_VERSION-$AMDGPU_TARGET \
   amdrocm-core-sdk$ROCM_VERSION-$AMDGPU_TARGET

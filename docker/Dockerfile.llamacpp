@@ -16,6 +16,7 @@ RUN git config --global user.name "Docker Build" && \
     git config --global user.email "buildenv@example.com"
 
 ADD build-llama.sh /usr/src/
+ADD gpu-target-cmake-flags /usr/src/gpu-target-cmake-flags
 RUN /bin/bash -c "cd /usr/src; ./llama-cpp-rdna-boosts/scripts/apply-all.sh /usr/src/llama.cpp /usr/src/llama-cpp-rdna-boosts"
 RUN /bin/bash -c "cd /usr/src; ./build-llama.sh"
 

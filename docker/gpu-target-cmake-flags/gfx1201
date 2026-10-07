@@ -1,0 +1,1 @@
+-DCMAKE_HIP_FLAGS="-mllvm=--amdgpu-unroll-threshold-local=600"
