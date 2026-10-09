@@ -1,4 +1,4 @@
--DCMAKE_HIP_FLAGS="-mprefer-vector-width=512 -mllvm=--inline-threshold=600 -mllvm=--amdgpu-unroll-threshold-local=150"
+-DCMAKE_HIP_FLAGS=-mprefer-vector-width=512 -mllvm='--inline-threshold=600' -mllvm='--amdgpu-unroll-threshold-local=150'
 -DGGML_CUDA_FORCE_MMQ=ON
 -DGGML_CUDA_ENABLE_UNIFIED_MEMORY=1
 -DGGML_HIP_NO_VMM=ON
