@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
   perl \
   pip \
   python3.14-venv \
+  python3-huggingface-hub \
   wget
 
 FROM initial_os AS rocm
