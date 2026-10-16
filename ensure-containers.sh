@@ -61,16 +61,16 @@ fi
 echo "Image will target $AMD_GFX_TARGET" >&2
 
 if [[ -z "$LLAMACPP_TAG" ]]; then
-  LLAMACPP_TAG=a55e952b85741249fcbf120bcd9d47cf2b1f6e48
+  LLAMACPP_TAG=097cf33d9499b1eade67d51e16d7c75427e7b267
 fi
 echo "Image will build llama.cpp $LLAMACPP_TAG" >&2
 if [[ -z "$LLAMACPP_BOOSTS_TAG" ]]; then
-  LLAMACPP_BOOSTS_TAG=v16-a55e952b8-r11
+  LLAMACPP_BOOSTS_TAG=v12-097cf33d9-r65
 fi
 echo "Image will build llama-cpp-rdna-boosts $LLAMACPP_BOOSTS_TAG" >&2
 
 if [[ -z "$COMFYUI_TAG" ]]; then
-  COMFYUI_TAG=v0.39.2
+  COMFYUI_TAG=v0.41.1
 fi
 echo "Image will build comfyui $COMFYUI_TAG" >&2
 
@@ -86,7 +86,7 @@ if docker image inspect "$ROOT_IMAGE" &> /dev/null; then
   echo "Docker image $ROOT_IMAGE already exists" >&2
 else
   echo "Building docker image $ROOT_IMAGE" >&2
-  docker build --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "ROCM_VERSION=$ROCM_VERSION" -t "$ROOT_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.rocmbase" "$SCRIPT_DIR/docker/" >&2
+  docker build --progress=plain --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "ROCM_VERSION=$ROCM_VERSION" -t "$ROOT_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.rocmbase" "$SCRIPT_DIR/docker/" >&2
 fi
 
 COMFYUI_IMAGE="$ROOT_IMAGE-comfyui-$COMFYUI_TAG"
@@ -94,7 +94,7 @@ if docker image inspect "$COMFYUI_IMAGE" &> /dev/null; then
   echo "Docker image $COMFYUI_IMAGE already exists" >&2
 else
   echo "Building docker image $COMFYUI_IMAGE" >&2
-  docker build --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "COMFYUI_BUILD=$COMFYUI_TAG" -t "$COMFYUI_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.comfyui" "$SCRIPT_DIR/docker/" >&2
+  docker build --progress=plain --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "COMFYUI_BUILD=$COMFYUI_TAG" -t "$COMFYUI_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.comfyui" "$SCRIPT_DIR/docker/" >&2
 fi
 
 LLAMACPP_IMAGE="$ROOT_IMAGE-llamacpp-$LLAMACPP_TAG"
@@ -102,7 +102,7 @@ if docker image inspect "$LLAMACPP_IMAGE" &> /dev/null; then
   echo "Docker image $LLAMACPP_IMAGE already exists" >&2
 else
   echo "Building docker image $LLAMACPP_IMAGE" >&2
-  docker build --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "LLAMACPP_BUILD=$LLAMACPP_TAG" --build-arg "LLAMACPP_BOOSTS=$LLAMACPP_BOOSTS_TAG" -t "$LLAMACPP_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.llamacpp" "$SCRIPT_DIR/docker/" >&2
+  docker build --progress=plain --build-arg "ROCM_BASE_IMAGE=${ROOT_IMAGE}" --build-arg "AMDGPU_TARGET=$AMD_GFX_TARGET" --build-arg "LLAMACPP_BUILD=$LLAMACPP_TAG" --build-arg "LLAMACPP_BOOSTS=$LLAMACPP_BOOSTS_TAG" -t "$LLAMACPP_IMAGE" -f "$SCRIPT_DIR/docker/Dockerfile.llamacpp" "$SCRIPT_DIR/docker/" >&2
 fi
 
 echo "$COMFYUI_IMAGE"
