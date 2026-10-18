@@ -69,7 +69,8 @@ ADD https://github.com/sipherxyz/comfyui-art-venture.git /opt/comfyui/custom_nod
 ADD https://github.com/aria1th/ComfyUI-LogicUtils.git /opt/comfyui/custom_nodes/ComfyUI-LogicUtils
 ADD https://github.com/TinyTerra/ComfyUI_tinyterraNodes.git /opt/comfyui/custom_nodes/ComfyUI_tinnyterraNodes
 ADD https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /opt/comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
-
+ADD https://github.com/embedding-shapes/ComfyUI-SweepGrid.git /opt/comfyui/custom_nodes/ComfyUI-SweepGrid
+ADD https://github.com/Flibens/comfyui-image-browser.git /opt/comfyui/custom_nodes/comfyui-image-browser
 
 FROM comfyui_ext
 
