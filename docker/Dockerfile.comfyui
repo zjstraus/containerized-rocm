@@ -69,8 +69,6 @@ ADD https://github.com/sipherxyz/comfyui-art-venture.git /opt/comfyui/custom_nod
 ADD https://github.com/aria1th/ComfyUI-LogicUtils.git /opt/comfyui/custom_nodes/ComfyUI-LogicUtils
 ADD https://github.com/TinyTerra/ComfyUI_tinyterraNodes.git /opt/comfyui/custom_nodes/ComfyUI_tinnyterraNodes
 ADD https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /opt/comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
-ADD --keep-git-dir=true https://github.com/kenjiqq/qq-nodes-comfyui.git /opt/comfyui/custom_nodes/qq-nodes-comfyui
-ADD https://github.com/LEv145/images-grid-comfy-plugin.git /opt/comfyui/custom_nodes/images-grid-comfy-plugin
 
 
 FROM comfyui_ext
