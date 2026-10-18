@@ -30,6 +30,8 @@ RUN sed -e '/^torchaudio$/d' -i /opt/comfyui/requirements.txt
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/requirements.txt
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/manager_requirements.txt
 
+COPY comfy.settings.json.override /opt/comfyui/user/default/comfy.settings.json
+
 FROM comfyui_dl AS comfyui_ext
 
 ADD https://github.com/Fannovel16/comfyui_controlnet_aux.git /opt/comfyui/custom_nodes/comfyui_controlnet_aux
@@ -45,6 +47,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custo
 
 ADD https://github.com/rgthree/rgthree-comfy.git#main /opt/comfyui/custom_nodes/rgthree-comfy
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/rgthree-comfy/requirements.txt
+COPY rgthree_config.json /opt/comfyui/custom_nodes/rgthree-comfy/rgthree_config.json
 
 ADD https://github.com/kijai/ComfyUI-KJNodes.git /opt/comfyui/custom_nodes/ComfyUI-KJNodes
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-KJNodes/requirements.txt
@@ -52,7 +55,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custo
 ADD https://github.com/ltdrdata/ComfyUI-Impact-Pack.git /opt/comfyui/custom_nodes/ComfyUI-Impact-Pack
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
 
-ADD https://github.com/farizrifqi/ComfyUI-Image-Saver.git /opt/comfyui/custom_nodes/ComfyUI-Image-Saver
+ADD https://github.com/alexopus/ComfyUI-Image-Saver.git /opt/comfyui/custom_nodes/ComfyUI-Image-Saver
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/ComfyUI-Image-Saver/requirements.txt
 
 ADD https://github.com/iGavroche/rocm-ninodes.git /opt/comfyui/custom_nodes/ComfyUI-ROCM-Optimized-VAE
@@ -66,6 +69,9 @@ ADD https://github.com/sipherxyz/comfyui-art-venture.git /opt/comfyui/custom_nod
 ADD https://github.com/aria1th/ComfyUI-LogicUtils.git /opt/comfyui/custom_nodes/ComfyUI-LogicUtils
 ADD https://github.com/TinyTerra/ComfyUI_tinyterraNodes.git /opt/comfyui/custom_nodes/ComfyUI_tinnyterraNodes
 ADD https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /opt/comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+ADD --keep-git-dir=true https://github.com/kenjiqq/qq-nodes-comfyui.git /opt/comfyui/custom_nodes/qq-nodes-comfyui
+ADD https://github.com/LEv145/images-grid-comfy-plugin.git /opt/comfyui/custom_nodes/images-grid-comfy-plugin
+
 
 FROM comfyui_ext
 

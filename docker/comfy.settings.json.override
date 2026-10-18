@@ -1,0 +1,16 @@
+{
+ "Comfy.Appearance.DisableAnimations": true,
+ "Comfy.DevMode": true,
+ "Comfy.LinkRenderMode": 1,
+ "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
+ "Comfy.NodeBadge.ShowApiPricing": false,
+ "Comfy.Notification.ShowVersionUpdates": false,
+ "Comfy.Queue.QPOV2": true,
+ "Comfy.RightSidePanel.IsOpen": true,
+ "Comfy.Validation.Workflows": true,
+ "EasyUse.ContextMenu.ModelsThumbnails": true,
+ "pysssss.ImageFeed.Deduplication": 0.25,
+ "pysssss.ImageFeed.SaveNodeOnly": true,
+ "pysssss.ModelInfo.NsfwLevel": "XXX",
+ "pysssss.SnapToGrid": true
+}
