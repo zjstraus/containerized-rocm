@@ -70,7 +70,7 @@ fi
 echo "Image will build llama-cpp-rdna-boosts $LLAMACPP_BOOSTS_TAG" >&2
 
 if [[ -z "$COMFYUI_TAG" ]]; then
-  COMFYUI_TAG=v0.41.3
+  COMFYUI_TAG=v0.42.1
 fi
 echo "Image will build comfyui $COMFYUI_TAG" >&2
 
