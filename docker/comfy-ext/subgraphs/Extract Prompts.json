@@ -1,0 +1,821 @@
+{
+  "revision": 0,
+  "last_node_id": "737",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 737,
+      "type": "b47aee15-0b67-4f68-a995-74618ecf6d0f",
+      "pos": [
+        400,
+        130
+      ],
+      "size": [
+        210,
+        130
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        },
+        {
+          "label": "ContextPositive",
+          "name": "TEXT_POS_G",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "label": "ContextNegative",
+          "name": "TEXT_NEG_G",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "label": "MetadataPositive",
+          "name": "positive",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "label": "MetadataNegative",
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "title": "Extract Prompts"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "b47aee15-0b67-4f68-a995-74618ecf6d0f",
+        "version": 1,
+        "state": {
+          "lastGroupId": 25,
+          "lastNodeId": 812,
+          "lastLinkId": 1808,
+          "lastRerouteId": 390
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Extract Prompts",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            3682,
+            -61,
+            128,
+            88
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            4330,
+            -61,
+            151.40740966796875,
+            168
+          ]
+        },
+        "inputs": [
+          {
+            "id": "dfe1eb9e-442a-4b64-8d8a-e38596152142",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              1583
+            ],
+            "label": "Context",
+            "pos": [
+              3786,
+              -37
+            ]
+          },
+          {
+            "id": "82c3e0a3-9fa6-4e46-b7fc-35bb821382ba",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              1594
+            ],
+            "label": "Metadata",
+            "pos": [
+              3786,
+              -17
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "5589f7cc-bd93-4765-be3f-ce68502d8236",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              1585
+            ],
+            "label": "Context",
+            "pos": [
+              4354,
+              -37
+            ]
+          },
+          {
+            "id": "8c5962eb-da46-45c4-b30b-f8e357ad6afa",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              1595
+            ],
+            "label": "Metadata",
+            "pos": [
+              4354,
+              -17
+            ]
+          },
+          {
+            "id": "7d859402-4357-45d3-b686-8055ee6bb7aa",
+            "name": "TEXT_POS_G",
+            "type": "STRING",
+            "linkIds": [
+              1587
+            ],
+            "label": "ContextPositive",
+            "pos": [
+              4354,
+              3
+            ]
+          },
+          {
+            "id": "46369aec-816d-4f8b-afd7-152db03bb664",
+            "name": "TEXT_NEG_G",
+            "type": "STRING",
+            "linkIds": [
+              1593
+            ],
+            "label": "ContextNegative",
+            "pos": [
+              4354,
+              23
+            ]
+          },
+          {
+            "id": "996ab14f-7500-417b-a547-46e7be4dc6e2",
+            "name": "positive",
+            "type": "STRING",
+            "linkIds": [
+              1596
+            ],
+            "label": "MetadataPositive",
+            "pos": [
+              4354,
+              43
+            ]
+          },
+          {
+            "id": "83c7ab01-b359-45f1-8d1c-8cd065d2bec1",
+            "name": "negative",
+            "type": "STRING",
+            "linkIds": [
+              1597
+            ],
+            "label": "MetadataNegative",
+            "pos": [
+              4354,
+              63
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 734,
+            "type": "Context Big (rgthree)",
+            "pos": [
+              3900,
+              -390
+            ],
+            "size": [
+              310,
+              470
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 1583
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "steps",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "step_refiner",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "cfg",
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "ckpt_name",
+                "type": [
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "sampler",
+                "type": [
+                  "euler",
+                  "euler_cfg_pp",
+                  "euler_ancestral",
+                  "euler_ancestral_cfg_pp",
+                  "heun",
+                  "heunpp2",
+                  "exp_heun_2_x0",
+                  "exp_heun_2_x0_sde",
+                  "dpm_2",
+                  "dpm_2_ancestral",
+                  "lms",
+                  "dpm_fast",
+                  "dpm_adaptive",
+                  "dpmpp_2s_ancestral",
+                  "dpmpp_2s_ancestral_cfg_pp",
+                  "dpmpp_sde",
+                  "dpmpp_sde_gpu",
+                  "dpmpp_2m",
+                  "dpmpp_2m_cfg_pp",
+                  "dpmpp_2m_sde",
+                  "dpmpp_2m_sde_gpu",
+                  "dpmpp_2m_sde_heun",
+                  "dpmpp_2m_sde_heun_gpu",
+                  "dpmpp_3m_sde",
+                  "dpmpp_3m_sde_gpu",
+                  "ddpm",
+                  "lcm",
+                  "ipndm",
+                  "ipndm_v",
+                  "deis",
+                  "cfgpp_ud10_ab",
+                  "res_multistep",
+                  "res_multistep_cfg_pp",
+                  "res_multistep_ancestral",
+                  "res_multistep_ancestral_cfg_pp",
+                  "gradient_estimation",
+                  "gradient_estimation_cfg_pp",
+                  "er_sde",
+                  "seeds_2",
+                  "seeds_3",
+                  "sa_solver",
+                  "sa_solver_pece",
+                  "ddim",
+                  "uni_pc",
+                  "uni_pc_bh2"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "scheduler",
+                "type": [
+                  "simple",
+                  "sgm_uniform",
+                  "karras",
+                  "exponential",
+                  "ddim_uniform",
+                  "beta",
+                  "normal",
+                  "linear_quadratic",
+                  "kl_optimal"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_width",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_height",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "mask",
+                "type": "MASK",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "control_net",
+                "type": "CONTROL_NET",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  1585
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEPS",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEP_REFINER",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CFG",
+                "shape": 3,
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CKPT_NAME",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SAMPLER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SCHEDULER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_WIDTH",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_HEIGHT",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": [
+                  1587
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": [
+                  1593
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CONTROL_NET",
+                "shape": 3,
+                "type": "CONTROL_NET",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 738,
+            "type": "Read Image Saver Pipe",
+            "pos": [
+              3960,
+              140
+            ],
+            "size": [
+              193.0851806640625,
+              366
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 1594
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  1595
+                ]
+              },
+              {
+                "localized_name": "filename",
+                "name": "filename",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "path",
+                "name": "path",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "counter",
+                "name": "counter",
+                "type": "INT",
+                "links": null
+              },
+              {
+                "localized_name": "modelname",
+                "name": "modelname",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "STRING",
+                "links": [
+                  1596
+                ]
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "STRING",
+                "links": [
+                  1597
+                ]
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "links": null
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "links": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "links": null
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "type": "INT",
+                "links": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "localized_name": "scheduler_name",
+                "name": "scheduler_name",
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "localized_name": "clip_skip",
+                "name": "clip_skip",
+                "type": "INT",
+                "links": null
+              },
+              {
+                "localized_name": "additional_hashes",
+                "name": "additional_hashes",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "custom",
+                "name": "custom",
+                "type": "STRING",
+                "links": null
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Read Image Saver Pipe"
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 1583,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 734,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 1585,
+            "origin_id": 734,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 1587,
+            "origin_id": 734,
+            "origin_slot": 17,
+            "target_id": -20,
+            "target_slot": 2,
+            "type": "STRING"
+          },
+          {
+            "id": 1593,
+            "origin_id": 734,
+            "origin_slot": 19,
+            "target_id": -20,
+            "target_slot": 3,
+            "type": "STRING"
+          },
+          {
+            "id": 1594,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 738,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 1595,
+            "origin_id": 738,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 1596,
+            "origin_id": 738,
+            "origin_slot": 5,
+            "target_id": -20,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 1597,
+            "origin_id": 738,
+            "origin_slot": 6,
+            "target_id": -20,
+            "target_slot": 5,
+            "type": "STRING"
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Prompts",
+        "description": "Split out the prompt values in the pipeline for display/debug"
+      }
+    ]
+  },
+  "extra": {}
+}

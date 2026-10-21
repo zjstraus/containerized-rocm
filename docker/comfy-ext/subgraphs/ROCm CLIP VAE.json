@@ -1,0 +1,1244 @@
+{
+  "revision": 0,
+  "last_node_id": "997",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 997,
+      "type": "feb3d6fd-9fbc-41dc-805c-900e7b315602",
+      "pos": [
+        1030,
+        570
+      ],
+      "size": [
+        470,
+        210
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        },
+        {
+          "label": "Clip",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "label": "ClipType",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "label": "VAE",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        },
+        {
+          "label": "ClipSkip",
+          "name": "clip_skip",
+          "type": "INT",
+          "widget": {
+            "name": "clip_skip"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        -1
+      ],
+      "widgets_values_named": {
+        "clip_name": "",
+        "type": "",
+        "vae_name": "",
+        "clip_skip": -1
+      },
+      "title": "ROCm CLIP + VAE"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "feb3d6fd-9fbc-41dc-805c-900e7b315602",
+        "version": 1,
+        "state": {
+          "lastGroupId": 32,
+          "lastNodeId": 997,
+          "lastLinkId": 2214,
+          "lastRerouteId": 700
+        },
+        "revision": 0,
+        "config": {},
+        "name": "ROCm CLIP + VAE",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            2780,
+            -1540,
+            128,
+            168
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            4640,
+            -1750,
+            128,
+            88
+          ]
+        },
+        "inputs": [
+          {
+            "id": "e6eac186-48e0-4057-bd50-71a8fbbef887",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2204
+            ],
+            "label": "Context",
+            "pos": [
+              2884,
+              -1516
+            ]
+          },
+          {
+            "id": "796f88ba-813c-460b-a114-a8e605daa5b2",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2205
+            ],
+            "label": "Metadata",
+            "pos": [
+              2884,
+              -1496
+            ]
+          },
+          {
+            "id": "1009e939-3ffe-491c-97c5-8de0d425c646",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              2206
+            ],
+            "label": "Clip",
+            "pos": [
+              2884,
+              -1476
+            ]
+          },
+          {
+            "id": "1edebd1e-251d-4d41-ac17-dade6c9f5402",
+            "name": "type",
+            "type": "COMBO",
+            "linkIds": [
+              2207
+            ],
+            "label": "ClipType",
+            "pos": [
+              2884,
+              -1456
+            ]
+          },
+          {
+            "id": "0356396b-e2a8-445e-8533-6921a2920cc5",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              2208
+            ],
+            "label": "VAE",
+            "pos": [
+              2884,
+              -1436
+            ]
+          },
+          {
+            "id": "ad211b18-920d-42ef-b70b-cb547f35cfb7",
+            "name": "clip_skip",
+            "type": "INT",
+            "linkIds": [
+              2210,
+              2211
+            ],
+            "label": "ClipSkip",
+            "pos": [
+              2884,
+              -1416
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "a3347751-b5f3-4699-ad4a-1029f39e101d",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2201
+            ],
+            "label": "Context",
+            "pos": [
+              4664,
+              -1726
+            ]
+          },
+          {
+            "id": "b82c6765-4d38-4da2-a79e-ec3137a1b3aa",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2202
+            ],
+            "label": "Metadata",
+            "pos": [
+              4664,
+              -1706
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 992,
+            "type": "Context Big (rgthree)",
+            "pos": [
+              4290,
+              -1740
+            ],
+            "size": [
+              310,
+              470
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 2204
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": 2212
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": 2203
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "steps",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "step_refiner",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "cfg",
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "ckpt_name",
+                "type": [
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "sampler",
+                "type": [
+                  "euler",
+                  "euler_cfg_pp",
+                  "euler_ancestral",
+                  "euler_ancestral_cfg_pp",
+                  "heun",
+                  "heunpp2",
+                  "exp_heun_2_x0",
+                  "exp_heun_2_x0_sde",
+                  "dpm_2",
+                  "dpm_2_ancestral",
+                  "lms",
+                  "dpm_fast",
+                  "dpm_adaptive",
+                  "dpmpp_2s_ancestral",
+                  "dpmpp_2s_ancestral_cfg_pp",
+                  "dpmpp_sde",
+                  "dpmpp_sde_gpu",
+                  "dpmpp_2m",
+                  "dpmpp_2m_cfg_pp",
+                  "dpmpp_2m_sde",
+                  "dpmpp_2m_sde_gpu",
+                  "dpmpp_2m_sde_heun",
+                  "dpmpp_2m_sde_heun_gpu",
+                  "dpmpp_3m_sde",
+                  "dpmpp_3m_sde_gpu",
+                  "ddpm",
+                  "lcm",
+                  "ipndm",
+                  "ipndm_v",
+                  "deis",
+                  "cfgpp_ud10_ab",
+                  "res_multistep",
+                  "res_multistep_cfg_pp",
+                  "res_multistep_ancestral",
+                  "res_multistep_ancestral_cfg_pp",
+                  "gradient_estimation",
+                  "gradient_estimation_cfg_pp",
+                  "er_sde",
+                  "seeds_2",
+                  "seeds_3",
+                  "sa_solver",
+                  "sa_solver_pece",
+                  "ddim",
+                  "uni_pc",
+                  "uni_pc_bh2"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "scheduler",
+                "type": [
+                  "simple",
+                  "sgm_uniform",
+                  "karras",
+                  "exponential",
+                  "ddim_uniform",
+                  "beta",
+                  "normal",
+                  "linear_quadratic",
+                  "kl_optimal"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_width",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_height",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "mask",
+                "type": "MASK",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "control_net",
+                "type": "CONTROL_NET",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  2201
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEPS",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEP_REFINER",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CFG",
+                "shape": 3,
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CKPT_NAME",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SAMPLER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SCHEDULER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_WIDTH",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_HEIGHT",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CONTROL_NET",
+                "shape": 3,
+                "type": "CONTROL_NET",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 993,
+            "type": "Edit Image Saver Pipe",
+            "pos": [
+              3460,
+              -2410
+            ],
+            "size": [
+              400,
+              470
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 2205
+              },
+              {
+                "localized_name": "counter",
+                "name": "counter",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "scheduler_name",
+                "name": "scheduler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "clip_skip",
+                "name": "clip_skip",
+                "shape": 7,
+                "type": "INT",
+                "link": 2210
+              },
+              {
+                "localized_name": "filename",
+                "name": "filename",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "filename"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "path",
+                "name": "path",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "path"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "modelname",
+                "name": "modelname",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "modelname"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "positive"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "negative"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "additional_hashes",
+                "name": "additional_hashes",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "additional_hashes"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "custom",
+                "name": "custom",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "custom"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  2202
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Edit Image Saver Pipe"
+            },
+            "widgets_values": [
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]"
+            ],
+            "widgets_values_named": {
+              "filename": "[original]",
+              "path": "[original]",
+              "modelname": "[original]",
+              "positive": "[original]",
+              "negative": "[original]",
+              "additional_hashes": "[original]",
+              "custom": "[original]"
+            }
+          },
+          {
+            "id": 994,
+            "type": "VAELoader",
+            "pos": [
+              3510,
+              -1560
+            ],
+            "size": [
+              230,
+              70
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 2208
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  2203
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.75",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "input_ue_unconnectable": {},
+                "version": "7.4.1"
+              }
+            },
+            "widgets_values": [
+              ""
+            ],
+            "widgets_values_named": {
+              "vae_name": ""
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 995,
+            "type": "CLIPLoader",
+            "pos": [
+              3510,
+              -1710
+            ],
+            "size": [
+              210,
+              110
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 2206
+              },
+              {
+                "localized_name": "type",
+                "name": "type",
+                "type": "COMBO",
+                "widget": {
+                  "name": "type"
+                },
+                "link": 2207
+              },
+              {
+                "localized_name": "device",
+                "name": "device",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "device"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  2209
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader"
+            },
+            "widgets_values": [
+              "",
+              "",
+              ""
+            ],
+            "widgets_values_named": {
+              "clip_name": "",
+              "type": "",
+              "device": ""
+            }
+          },
+          {
+            "id": 996,
+            "type": "CLIPSetLastLayer",
+            "pos": [
+              3840,
+              -1840
+            ],
+            "size": [
+              270,
+              90
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 2209
+              },
+              {
+                "localized_name": "stop_at_clip_layer",
+                "name": "stop_at_clip_layer",
+                "type": "INT",
+                "widget": {
+                  "name": "stop_at_clip_layer"
+                },
+                "link": 2211
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  2212
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPSetLastLayer",
+              "cnr_id": "comfy-core",
+              "ver": "0.19.3"
+            },
+            "widgets_values": [
+              -2
+            ],
+            "widgets_values_named": {
+              "stop_at_clip_layer": -2
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 2201,
+            "origin_id": 992,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2202,
+            "origin_id": 993,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE",
+            "parentId": 694
+          },
+          {
+            "id": 2203,
+            "origin_id": 994,
+            "origin_slot": 0,
+            "target_id": 992,
+            "target_slot": 3,
+            "type": "VAE",
+            "parentId": 698
+          },
+          {
+            "id": 2204,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 992,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT",
+            "parentId": 690
+          },
+          {
+            "id": 2205,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 993,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE",
+            "parentId": 696
+          },
+          {
+            "id": 2206,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 995,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 2207,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 995,
+            "target_slot": 1,
+            "type": "COMBO"
+          },
+          {
+            "id": 2208,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 994,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 2209,
+            "origin_id": 995,
+            "origin_slot": 0,
+            "target_id": 996,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 2210,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 993,
+            "target_slot": 10,
+            "type": "INT",
+            "parentId": 699
+          },
+          {
+            "id": 2211,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 996,
+            "target_slot": 1,
+            "type": "INT",
+            "parentId": 700
+          },
+          {
+            "id": 2212,
+            "origin_id": 996,
+            "origin_slot": 0,
+            "target_id": 992,
+            "target_slot": 2,
+            "type": "CLIP"
+          }
+        ],
+        "floatingLinks": [
+          {
+            "id": 2213,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": -1,
+            "target_slot": -1,
+            "type": "INT",
+            "parentId": 692
+          },
+          {
+            "id": 2214,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": -1,
+            "target_slot": -1,
+            "type": "INT",
+            "parentId": 697
+          }
+        ],
+        "reroutes": [
+          {
+            "id": 690,
+            "parentId": 691,
+            "pos": [
+              4260,
+              -1466
+            ],
+            "linkIds": [
+              2204
+            ]
+          },
+          {
+            "id": 691,
+            "pos": [
+              3030,
+              -1466
+            ],
+            "linkIds": [
+              2204
+            ]
+          },
+          {
+            "id": 692,
+            "parentId": 693,
+            "pos": [
+              3760,
+              -1476
+            ],
+            "linkIds": [],
+            "floating": {
+              "slotType": "output"
+            }
+          },
+          {
+            "id": 693,
+            "pos": [
+              3050,
+              -1476
+            ],
+            "linkIds": []
+          },
+          {
+            "id": 694,
+            "parentId": 695,
+            "pos": [
+              4620,
+              -1706
+            ],
+            "linkIds": [
+              2202
+            ]
+          },
+          {
+            "id": 695,
+            "pos": [
+              4620,
+              -1796
+            ],
+            "linkIds": [
+              2202
+            ]
+          },
+          {
+            "id": 696,
+            "pos": [
+              2930,
+              -1956
+            ],
+            "linkIds": [
+              2205
+            ]
+          },
+          {
+            "id": 697,
+            "pos": [
+              2960,
+              -1946
+            ],
+            "linkIds": [],
+            "floating": {
+              "slotType": "output"
+            }
+          },
+          {
+            "id": 698,
+            "pos": [
+              4240,
+              -1556
+            ],
+            "linkIds": [
+              2203
+            ]
+          },
+          {
+            "id": 699,
+            "pos": [
+              3177,
+              -1806
+            ],
+            "linkIds": [
+              2210,
+              2211
+            ]
+          },
+          {
+            "id": 700,
+            "parentId": 699,
+            "pos": [
+              3750,
+              -1806
+            ],
+            "linkIds": [
+              2211
+            ]
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Pipeline/Loading",
+        "description": "Set/override the CLIP and VAE on the pipeline"
+      }
+    ]
+  },
+  "extra": {}
+}

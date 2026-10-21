@@ -1,0 +1,1203 @@
+{
+  "revision": 0,
+  "last_node_id": "960",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 960,
+      "type": "6dde7523-99c6-4ed0-8ab2-a67e34cdff2d",
+      "pos": [
+        540,
+        310
+      ],
+      "size": [
+        480,
+        130
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Checkpoint",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        },
+        {
+          "label": "ClipSkip",
+          "name": "stop_at_clip_layer",
+          "type": "INT",
+          "widget": {
+            "name": "stop_at_clip_layer"
+          },
+          "link": null
+        },
+        {
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "",
+        -2
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "",
+        "stop_at_clip_layer": -2
+      },
+      "title": "ROCm Checkpoint"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "6dde7523-99c6-4ed0-8ab2-a67e34cdff2d",
+        "version": 1,
+        "state": {
+          "lastGroupId": 32,
+          "lastNodeId": 960,
+          "lastLinkId": 2149,
+          "lastRerouteId": 637
+        },
+        "revision": 0,
+        "config": {},
+        "name": "ROCm Checkpoint",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            2780,
+            -1540,
+            128,
+            128
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            4640,
+            -1750,
+            128,
+            88
+          ]
+        },
+        "inputs": [
+          {
+            "id": "53f5310b-373f-4c19-96a0-65b913bf383f",
+            "name": "ckpt_name",
+            "type": "COMBO",
+            "linkIds": [
+              2146
+            ],
+            "label": "Checkpoint",
+            "pos": [
+              2884,
+              -1516
+            ]
+          },
+          {
+            "id": "85e29c8e-c92c-4391-82a2-08c709030c54",
+            "name": "stop_at_clip_layer",
+            "type": "INT",
+            "linkIds": [
+              1338,
+              1367
+            ],
+            "label": "ClipSkip",
+            "pos": [
+              2884,
+              -1496
+            ]
+          },
+          {
+            "id": "e6eac186-48e0-4057-bd50-71a8fbbef887",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2145
+            ],
+            "label": "Context",
+            "pos": [
+              2884,
+              -1476
+            ]
+          },
+          {
+            "id": "796f88ba-813c-460b-a114-a8e605daa5b2",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2147
+            ],
+            "label": "Metadata",
+            "pos": [
+              2884,
+              -1456
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "a3347751-b5f3-4699-ad4a-1029f39e101d",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2143
+            ],
+            "label": "Context",
+            "pos": [
+              4664,
+              -1726
+            ]
+          },
+          {
+            "id": "b82c6765-4d38-4da2-a79e-ec3137a1b3aa",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2148
+            ],
+            "label": "Metadata",
+            "pos": [
+              4664,
+              -1706
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 956,
+            "type": "ROCmCheckpointLoader",
+            "pos": [
+              3330,
+              -1720
+            ],
+            "size": [
+              360,
+              210
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "Checkpoint",
+                "localized_name": "ckpt_name",
+                "name": "ckpt_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "ckpt_name"
+                },
+                "link": 2141
+              },
+              {
+                "localized_name": "use_cache",
+                "name": "use_cache",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "use_cache"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "force_reload",
+                "name": "force_reload",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "force_reload"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "compatibility_mode",
+                "name": "compatibility_mode",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "compatibility_mode"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  2142
+                ]
+              },
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  41
+                ]
+              },
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  2144
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ROCmCheckpointLoader"
+            },
+            "widgets_values": [
+              "",
+              true,
+              false,
+              false
+            ],
+            "widgets_values_named": {
+              "ckpt_name": "",
+              "use_cache": true,
+              "force_reload": false,
+              "compatibility_mode": false
+            }
+          },
+          {
+            "id": 44,
+            "type": "CLIPSetLastLayer",
+            "pos": [
+              3810,
+              -1670
+            ],
+            "size": [
+              270,
+              90
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 41
+              },
+              {
+                "localized_name": "stop_at_clip_layer",
+                "name": "stop_at_clip_layer",
+                "type": "INT",
+                "widget": {
+                  "name": "stop_at_clip_layer"
+                },
+                "link": 1338
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  1332
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPSetLastLayer",
+              "cnr_id": "comfy-core",
+              "ver": "0.19.3"
+            },
+            "widgets_values": [
+              -2
+            ],
+            "widgets_values_named": {
+              "stop_at_clip_layer": -2
+            }
+          },
+          {
+            "id": 957,
+            "type": "Context Big (rgthree)",
+            "pos": [
+              4290,
+              -1740
+            ],
+            "size": [
+              310,
+              470
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 2145
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": 2142
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": 1332
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": 2144
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "steps",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "step_refiner",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "cfg",
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "ckpt_name",
+                "type": [
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "sampler",
+                "type": [
+                  "euler",
+                  "euler_cfg_pp",
+                  "euler_ancestral",
+                  "euler_ancestral_cfg_pp",
+                  "heun",
+                  "heunpp2",
+                  "exp_heun_2_x0",
+                  "exp_heun_2_x0_sde",
+                  "dpm_2",
+                  "dpm_2_ancestral",
+                  "lms",
+                  "dpm_fast",
+                  "dpm_adaptive",
+                  "dpmpp_2s_ancestral",
+                  "dpmpp_2s_ancestral_cfg_pp",
+                  "dpmpp_sde",
+                  "dpmpp_sde_gpu",
+                  "dpmpp_2m",
+                  "dpmpp_2m_cfg_pp",
+                  "dpmpp_2m_sde",
+                  "dpmpp_2m_sde_gpu",
+                  "dpmpp_2m_sde_heun",
+                  "dpmpp_2m_sde_heun_gpu",
+                  "dpmpp_3m_sde",
+                  "dpmpp_3m_sde_gpu",
+                  "ddpm",
+                  "lcm",
+                  "ipndm",
+                  "ipndm_v",
+                  "deis",
+                  "cfgpp_ud10_ab",
+                  "res_multistep",
+                  "res_multistep_cfg_pp",
+                  "res_multistep_ancestral",
+                  "res_multistep_ancestral_cfg_pp",
+                  "gradient_estimation",
+                  "gradient_estimation_cfg_pp",
+                  "er_sde",
+                  "seeds_2",
+                  "seeds_3",
+                  "sa_solver",
+                  "sa_solver_pece",
+                  "ddim",
+                  "uni_pc",
+                  "uni_pc_bh2"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "scheduler",
+                "type": [
+                  "simple",
+                  "sgm_uniform",
+                  "karras",
+                  "exponential",
+                  "ddim_uniform",
+                  "beta",
+                  "normal",
+                  "linear_quadratic",
+                  "kl_optimal"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_width",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_height",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "mask",
+                "type": "MASK",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "control_net",
+                "type": "CONTROL_NET",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  2143
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEPS",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEP_REFINER",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CFG",
+                "shape": 3,
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CKPT_NAME",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SAMPLER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SCHEDULER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_WIDTH",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_HEIGHT",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CONTROL_NET",
+                "shape": 3,
+                "type": "CONTROL_NET",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 958,
+            "type": "CheckpointNameSelector",
+            "pos": [
+              3020,
+              -1660
+            ],
+            "size": [
+              280,
+              110
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "Checkpoint",
+                "localized_name": "ckpt_name",
+                "name": "ckpt_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "ckpt_name"
+                },
+                "link": 2146
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "ckpt_name",
+                "name": "ckpt_name",
+                "type": "COMBO",
+                "links": [
+                  2141
+                ]
+              },
+              {
+                "localized_name": "ckpt_name_str",
+                "name": "ckpt_name_str",
+                "type": "STRING",
+                "links": [
+                  2149
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CheckpointNameSelector"
+            },
+            "widgets_values": [
+              ""
+            ],
+            "widgets_values_named": {
+              "ckpt_name": ""
+            }
+          },
+          {
+            "id": 959,
+            "type": "Edit Image Saver Pipe",
+            "pos": [
+              3330,
+              -2250
+            ],
+            "size": [
+              400,
+              470
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 2147
+              },
+              {
+                "localized_name": "counter",
+                "name": "counter",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "scheduler_name",
+                "name": "scheduler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "clip_skip",
+                "name": "clip_skip",
+                "shape": 7,
+                "type": "INT",
+                "link": 1367
+              },
+              {
+                "localized_name": "filename",
+                "name": "filename",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "filename"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "path",
+                "name": "path",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "path"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "modelname",
+                "name": "modelname",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "modelname"
+                },
+                "link": 2149
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "positive"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "negative"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "additional_hashes",
+                "name": "additional_hashes",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "additional_hashes"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "custom",
+                "name": "custom",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "custom"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  2148
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Edit Image Saver Pipe"
+            },
+            "widgets_values": [
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]"
+            ],
+            "widgets_values_named": {
+              "filename": "[original]",
+              "path": "[original]",
+              "modelname": "[original]",
+              "positive": "[original]",
+              "negative": "[original]",
+              "additional_hashes": "[original]",
+              "custom": "[original]"
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 2141,
+            "origin_id": 958,
+            "origin_slot": 0,
+            "target_id": 956,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 41,
+            "origin_id": 956,
+            "origin_slot": 1,
+            "target_id": 44,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 2142,
+            "origin_id": 956,
+            "origin_slot": 0,
+            "target_id": 957,
+            "target_slot": 1,
+            "type": "MODEL"
+          },
+          {
+            "id": 1332,
+            "origin_id": 44,
+            "origin_slot": 0,
+            "target_id": 957,
+            "target_slot": 2,
+            "type": "CLIP"
+          },
+          {
+            "id": 2143,
+            "origin_id": 957,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2144,
+            "origin_id": 956,
+            "origin_slot": 2,
+            "target_id": 957,
+            "target_slot": 3,
+            "type": "VAE",
+            "parentId": 195
+          },
+          {
+            "id": 2145,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 957,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT",
+            "parentId": 630
+          },
+          {
+            "id": 1338,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 44,
+            "target_slot": 1,
+            "type": "INT",
+            "parentId": 632
+          },
+          {
+            "id": 2146,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 958,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 2147,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 959,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE",
+            "parentId": 636
+          },
+          {
+            "id": 2148,
+            "origin_id": 959,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE",
+            "parentId": 634
+          },
+          {
+            "id": 1367,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 959,
+            "target_slot": 10,
+            "type": "INT",
+            "parentId": 637
+          },
+          {
+            "id": 2149,
+            "origin_id": 958,
+            "origin_slot": 1,
+            "target_id": 959,
+            "target_slot": 13,
+            "type": "STRING"
+          }
+        ],
+        "reroutes": [
+          {
+            "id": 190,
+            "pos": [
+              3800,
+              -1566
+            ],
+            "linkIds": [
+              2144
+            ]
+          },
+          {
+            "id": 195,
+            "parentId": 190,
+            "pos": [
+              4090,
+              -1566
+            ],
+            "linkIds": [
+              2144
+            ]
+          },
+          {
+            "id": 630,
+            "parentId": 631,
+            "pos": [
+              4260,
+              -1466
+            ],
+            "linkIds": [
+              2145
+            ]
+          },
+          {
+            "id": 631,
+            "pos": [
+              3030,
+              -1466
+            ],
+            "linkIds": [
+              2145
+            ]
+          },
+          {
+            "id": 632,
+            "parentId": 633,
+            "pos": [
+              3760,
+              -1476
+            ],
+            "linkIds": [
+              1338
+            ]
+          },
+          {
+            "id": 633,
+            "pos": [
+              3050,
+              -1476
+            ],
+            "linkIds": [
+              1338
+            ]
+          },
+          {
+            "id": 634,
+            "parentId": 635,
+            "pos": [
+              4620,
+              -1706
+            ],
+            "linkIds": [
+              2148
+            ]
+          },
+          {
+            "id": 635,
+            "pos": [
+              4620,
+              -1796
+            ],
+            "linkIds": [
+              2148
+            ]
+          },
+          {
+            "id": 636,
+            "pos": [
+              2960,
+              -1686
+            ],
+            "linkIds": [
+              2147
+            ]
+          },
+          {
+            "id": 637,
+            "pos": [
+              2990,
+              -1686
+            ],
+            "linkIds": [
+              1367
+            ]
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Pipeline/Loading",
+        "description": "Load a combined checkpoint"
+      }
+    ]
+  },
+  "extra": {}
+}

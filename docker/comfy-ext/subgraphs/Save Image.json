@@ -1,0 +1,412 @@
+{
+  "revision": 0,
+  "last_node_id": "1011",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1011,
+      "type": "44aaf4af-9650-455c-b086-31d894fe4da4",
+      "pos": [
+        -50,
+        1500
+      ],
+      "size": [
+        210,
+        130
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "localized_name": "pipe",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "title": "Save Image"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "44aaf4af-9650-455c-b086-31d894fe4da4",
+        "version": 1,
+        "state": {
+          "lastGroupId": 32,
+          "lastNodeId": 1011,
+          "lastLinkId": 2255,
+          "lastRerouteId": 723
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Save Image",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            5262,
+            -1151,
+            128,
+            88
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            6150,
+            -1131,
+            128,
+            88
+          ]
+        },
+        "inputs": [
+          {
+            "id": "7ff26e61-24e8-42c3-9bf8-1de66f2ce729",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              1549
+            ],
+            "label": "Context",
+            "dir": 3,
+            "pos": [
+              5366,
+              -1127
+            ]
+          },
+          {
+            "id": "115ad991-4f50-410e-93c3-26df83de0798",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              1548
+            ],
+            "localized_name": "pipe",
+            "label": "Metadata",
+            "pos": [
+              5366,
+              -1107
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "5ac3eff6-882a-47c5-8cce-b74057ce014d",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              1560
+            ],
+            "label": "Context",
+            "pos": [
+              6174,
+              -1107
+            ]
+          },
+          {
+            "id": "e71d14f8-64a1-437f-8f3d-ec60339143ed",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              1561
+            ],
+            "label": "Metadata",
+            "pos": [
+              6174,
+              -1087
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 711,
+            "type": "Context (rgthree)",
+            "pos": [
+              5500,
+              -1280
+            ],
+            "size": [
+              240,
+              190
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 1549
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  1560
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": [
+                  1550
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 714,
+            "type": "Image Saver (From Pipe)",
+            "pos": [
+              5760,
+              -1010
+            ],
+            "size": [
+              230,
+              100
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 1548
+              },
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 1550
+              },
+              {
+                "localized_name": "show_preview",
+                "name": "show_preview",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "show_preview"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  1561
+                ]
+              },
+              {
+                "localized_name": "hashes",
+                "name": "hashes",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "a1111_params",
+                "name": "a1111_params",
+                "type": "STRING",
+                "links": null
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Image Saver (From Pipe)"
+            },
+            "widgets_values": [
+              false
+            ],
+            "widgets_values_named": {
+              "show_preview": false
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 1550,
+            "origin_id": 711,
+            "origin_slot": 7,
+            "target_id": 714,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 1549,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 711,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 1548,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 714,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 1560,
+            "origin_id": 711,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 1561,
+            "origin_id": 714,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE"
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Pipeline/Processing",
+        "description": "Save image with metadata to disk"
+      }
+    ]
+  },
+  "extra": {}
+}

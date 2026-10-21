@@ -1,0 +1,1638 @@
+{
+  "revision": 0,
+  "last_node_id": "1039",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1039,
+      "type": "3c063b2e-248d-45df-97f8-3da4a9b134d7",
+      "pos": [
+        1510,
+        990
+      ],
+      "size": [
+        470,
+        300
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Prompt",
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "Image2",
+          "localized_name": "image_2",
+          "name": "images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image3",
+          "localized_name": "image_3",
+          "name": "images.image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image4",
+          "localized_name": "image_4",
+          "name": "images.image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image5",
+          "localized_name": "image_5",
+          "name": "images.image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image6",
+          "localized_name": "image_6",
+          "name": "images.image_6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image7",
+          "localized_name": "image_7",
+          "name": "images.image_7",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image8",
+          "localized_name": "image_8",
+          "name": "images.image_8",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image9",
+          "localized_name": "image_9",
+          "name": "images.image_9",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Image10",
+          "localized_name": "image_10",
+          "name": "images.image_10",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "prompt": ""
+      },
+      "title": "Qwen Image 2.1 Prompt"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "3c063b2e-248d-45df-97f8-3da4a9b134d7",
+        "version": 1,
+        "state": {
+          "lastGroupId": 32,
+          "lastNodeId": 1040,
+          "lastLinkId": 2333,
+          "lastRerouteId": 744
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Qwen Image 2.1 Prompt",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -2588,
+            1251,
+            128,
+            288
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            -570,
+            1311,
+            128,
+            88
+          ]
+        },
+        "inputs": [
+          {
+            "id": "d33b23ce-f532-4808-b966-e4b6747c39ac",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              2324
+            ],
+            "localized_name": "prompt",
+            "label": "Prompt",
+            "pos": [
+              -2484,
+              1275
+            ]
+          },
+          {
+            "id": "7b78b58d-6c39-473a-a291-595b0b54f5e9",
+            "name": "images.image_2",
+            "type": "IMAGE",
+            "linkIds": [
+              2325
+            ],
+            "localized_name": "image_2",
+            "label": "Image2",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1295
+            ]
+          },
+          {
+            "id": "a626139b-1efa-4cdd-bece-91007cf23db1",
+            "name": "images.image_3",
+            "type": "IMAGE",
+            "linkIds": [
+              2326
+            ],
+            "localized_name": "image_3",
+            "label": "Image3",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1315
+            ]
+          },
+          {
+            "id": "1f8603da-5b9b-41e5-82c5-3c26bcf6e7cb",
+            "name": "images.image_4",
+            "type": "IMAGE",
+            "linkIds": [
+              2327
+            ],
+            "localized_name": "image_4",
+            "label": "Image4",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1335
+            ]
+          },
+          {
+            "id": "148f06bc-fbc0-47b8-b6db-0ef0e76eda77",
+            "name": "images.image_5",
+            "type": "IMAGE",
+            "linkIds": [
+              2328
+            ],
+            "localized_name": "image_5",
+            "label": "Image5",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1355
+            ]
+          },
+          {
+            "id": "542dbbd5-b69d-4879-87c1-cd71cb93810c",
+            "name": "images.image_6",
+            "type": "IMAGE",
+            "linkIds": [
+              2329
+            ],
+            "localized_name": "image_6",
+            "label": "Image6",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1375
+            ]
+          },
+          {
+            "id": "63908d32-68cd-472b-8566-b00d49177b39",
+            "name": "images.image_7",
+            "type": "IMAGE",
+            "linkIds": [
+              2330
+            ],
+            "localized_name": "image_7",
+            "label": "Image7",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1395
+            ]
+          },
+          {
+            "id": "54857bba-16d3-4be5-b656-b42ae46c941d",
+            "name": "images.image_8",
+            "type": "IMAGE",
+            "linkIds": [
+              2331
+            ],
+            "localized_name": "image_8",
+            "label": "Image8",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1415
+            ]
+          },
+          {
+            "id": "98861828-8186-45a5-a966-d7b9392641b2",
+            "name": "images.image_9",
+            "type": "IMAGE",
+            "linkIds": [
+              2332
+            ],
+            "localized_name": "image_9",
+            "label": "Image9",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1435
+            ]
+          },
+          {
+            "id": "85da28b7-2dbc-48a6-97c0-40ae56c056aa",
+            "name": "images.image_10",
+            "type": "IMAGE",
+            "linkIds": [
+              2333
+            ],
+            "localized_name": "image_10",
+            "label": "Image10",
+            "shape": 7,
+            "pos": [
+              -2484,
+              1455
+            ]
+          },
+          {
+            "id": "e3d7c31f-03a2-4613-b657-23702c5df76b",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2322
+            ],
+            "label": "Context",
+            "pos": [
+              -2484,
+              1475
+            ]
+          },
+          {
+            "id": "f279f7e1-4ee5-42c9-9cb4-178982206b2b",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2323
+            ],
+            "label": "Metadata",
+            "pos": [
+              -2484,
+              1495
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "b7ef1b6f-a937-466b-a44f-bf1b7a47e31e",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2299
+            ],
+            "label": "Context",
+            "pos": [
+              -546,
+              1335
+            ]
+          },
+          {
+            "id": "077e983b-320b-44bc-ade2-752e21833d1f",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2300
+            ],
+            "label": "Metadata",
+            "pos": [
+              -546,
+              1355
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 560,
+            "type": "Context (rgthree)",
+            "pos": [
+              -1040,
+              1130
+            ],
+            "size": [
+              240,
+              220
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 2298
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 2309
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 2310
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": 2311
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  2299
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": []
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": []
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 1037,
+            "type": "Context Big (rgthree)",
+            "pos": [
+              -2330,
+              820
+            ],
+            "size": [
+              310,
+              470
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 2322
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "steps",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "step_refiner",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "cfg",
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "ckpt_name",
+                "type": [
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "sampler",
+                "type": [
+                  "euler",
+                  "euler_cfg_pp",
+                  "euler_ancestral",
+                  "euler_ancestral_cfg_pp",
+                  "heun",
+                  "heunpp2",
+                  "exp_heun_2_x0",
+                  "exp_heun_2_x0_sde",
+                  "dpm_2",
+                  "dpm_2_ancestral",
+                  "lms",
+                  "dpm_fast",
+                  "dpm_adaptive",
+                  "dpmpp_2s_ancestral",
+                  "dpmpp_2s_ancestral_cfg_pp",
+                  "dpmpp_sde",
+                  "dpmpp_sde_gpu",
+                  "dpmpp_2m",
+                  "dpmpp_2m_cfg_pp",
+                  "dpmpp_2m_sde",
+                  "dpmpp_2m_sde_gpu",
+                  "dpmpp_2m_sde_heun",
+                  "dpmpp_2m_sde_heun_gpu",
+                  "dpmpp_3m_sde",
+                  "dpmpp_3m_sde_gpu",
+                  "ddpm",
+                  "lcm",
+                  "ipndm",
+                  "ipndm_v",
+                  "deis",
+                  "cfgpp_ud10_ab",
+                  "res_multistep",
+                  "res_multistep_cfg_pp",
+                  "res_multistep_ancestral",
+                  "res_multistep_ancestral_cfg_pp",
+                  "gradient_estimation",
+                  "gradient_estimation_cfg_pp",
+                  "er_sde",
+                  "seeds_2",
+                  "seeds_3",
+                  "sa_solver",
+                  "sa_solver_pece",
+                  "ddim",
+                  "uni_pc",
+                  "uni_pc_bh2"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "scheduler",
+                "type": [
+                  "simple",
+                  "sgm_uniform",
+                  "karras",
+                  "exponential",
+                  "ddim_uniform",
+                  "beta",
+                  "normal",
+                  "linear_quadratic",
+                  "kl_optimal"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_width",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_height",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_g",
+                "type": "STRING",
+                "link": 1979
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "mask",
+                "type": "MASK",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "control_net",
+                "type": "CONTROL_NET",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  2298
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": [
+                  2305
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": [
+                  2307
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": [
+                  2306
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEPS",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEP_REFINER",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CFG",
+                "shape": 3,
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CKPT_NAME",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SAMPLER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SCHEDULER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_WIDTH",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_HEIGHT",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": [
+                  1995,
+                  2308
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CONTROL_NET",
+                "shape": 3,
+                "type": "CONTROL_NET",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 1038,
+            "type": "Edit Image Saver Pipe",
+            "pos": [
+              -1060,
+              1690
+            ],
+            "size": [
+              400,
+              470
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 2323
+              },
+              {
+                "localized_name": "counter",
+                "name": "counter",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "scheduler_name",
+                "name": "scheduler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "clip_skip",
+                "name": "clip_skip",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "filename",
+                "name": "filename",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "filename"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "path",
+                "name": "path",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "path"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "modelname",
+                "name": "modelname",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "modelname"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "positive"
+                },
+                "link": 1996
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "negative"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "additional_hashes",
+                "name": "additional_hashes",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "additional_hashes"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "custom",
+                "name": "custom",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "custom"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  2300
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Edit Image Saver Pipe"
+            },
+            "widgets_values": [
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]"
+            ],
+            "widgets_values_named": {
+              "filename": "[original]",
+              "path": "[original]",
+              "modelname": "[original]",
+              "positive": "[original]",
+              "negative": "[original]",
+              "additional_hashes": "[original]",
+              "custom": "[original]"
+            }
+          },
+          {
+            "id": 876,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2780,
+              940
+            ],
+            "size": [
+              400,
+              200
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "STRING",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 2324
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  1979
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              ""
+            ],
+            "widgets_values_named": {
+              "value": ""
+            }
+          },
+          {
+            "id": 885,
+            "type": "StringFormat",
+            "pos": [
+              -1480,
+              1980
+            ],
+            "size": [
+              210,
+              130
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "values.a",
+                "shape": 7,
+                "type": "*",
+                "link": 1995
+              },
+              {
+                "localized_name": "b",
+                "name": "values.b",
+                "shape": 7,
+                "type": "*",
+                "link": null
+              },
+              {
+                "localized_name": "f_string",
+                "name": "f_string",
+                "type": "STRING",
+                "widget": {
+                  "name": "f_string"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  1996
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "StringFormat"
+            },
+            "widgets_values": [
+              "{a}"
+            ],
+            "widgets_values_named": {
+              "f_string": "{a}"
+            }
+          },
+          {
+            "id": 1040,
+            "type": "TextEncodeQwenImage21",
+            "pos": [
+              -1470,
+              1210
+            ],
+            "size": [
+              400,
+              406
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 2305
+              },
+              {
+                "localized_name": "image_1",
+                "name": "images.image_1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2306
+              },
+              {
+                "localized_name": "image_2",
+                "name": "images.image_2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2325
+              },
+              {
+                "localized_name": "image_3",
+                "name": "images.image_3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2326
+              },
+              {
+                "localized_name": "image_4",
+                "name": "images.image_4",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2327
+              },
+              {
+                "localized_name": "image_5",
+                "name": "images.image_5",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2328
+              },
+              {
+                "localized_name": "image_6",
+                "name": "images.image_6",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2329
+              },
+              {
+                "localized_name": "image_7",
+                "name": "images.image_7",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2330
+              },
+              {
+                "localized_name": "image_8",
+                "name": "images.image_8",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2331
+              },
+              {
+                "localized_name": "image_9",
+                "name": "images.image_9",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2332
+              },
+              {
+                "localized_name": "image_10",
+                "name": "images.image_10",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 2333
+              },
+              {
+                "localized_name": "image_11",
+                "name": "images.image_11",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 2307
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 2308
+              },
+              {
+                "localized_name": "negative_prompt",
+                "name": "negative_prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "negative_prompt"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "resolution",
+                "name": "resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  2309
+                ]
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "links": [
+                  2310
+                ]
+              },
+              {
+                "localized_name": "latent",
+                "name": "latent",
+                "type": "LATENT",
+                "links": [
+                  2311
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "TextEncodeQwenImage21"
+            },
+            "widgets_values": [
+              "",
+              "",
+              1024
+            ],
+            "widgets_values_named": {
+              "prompt": "",
+              "negative_prompt": "",
+              "resolution": 1024
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 2298,
+            "origin_id": 1037,
+            "origin_slot": 0,
+            "target_id": 560,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2299,
+            "origin_id": 560,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2300,
+            "origin_id": 1038,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 1979,
+            "origin_id": 876,
+            "origin_slot": 0,
+            "target_id": 1037,
+            "target_slot": 17,
+            "type": "STRING"
+          },
+          {
+            "id": 1996,
+            "origin_id": 885,
+            "origin_slot": 0,
+            "target_id": 1038,
+            "target_slot": 14,
+            "type": "STRING"
+          },
+          {
+            "id": 2309,
+            "origin_id": 1040,
+            "origin_slot": 0,
+            "target_id": 560,
+            "target_slot": 4,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 2310,
+            "origin_id": 1040,
+            "origin_slot": 1,
+            "target_id": 560,
+            "target_slot": 5,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 2311,
+            "origin_id": 1040,
+            "origin_slot": 2,
+            "target_id": 560,
+            "target_slot": 6,
+            "type": "LATENT"
+          },
+          {
+            "id": 1995,
+            "origin_id": 1037,
+            "origin_slot": 17,
+            "target_id": 885,
+            "target_slot": 0,
+            "type": "STRING",
+            "parentId": 743
+          },
+          {
+            "id": 2322,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 1037,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2323,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 1038,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 2324,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 876,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 2305,
+            "origin_id": 1037,
+            "origin_slot": 2,
+            "target_id": 1040,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 2306,
+            "origin_id": 1037,
+            "origin_slot": 7,
+            "target_id": 1040,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2325,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 1040,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2326,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 1040,
+            "target_slot": 3,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2327,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 1040,
+            "target_slot": 4,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2328,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 1040,
+            "target_slot": 5,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2329,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 1040,
+            "target_slot": 6,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2330,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 1040,
+            "target_slot": 7,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2331,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 1040,
+            "target_slot": 8,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2332,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 1040,
+            "target_slot": 9,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2333,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 1040,
+            "target_slot": 10,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2307,
+            "origin_id": 1037,
+            "origin_slot": 3,
+            "target_id": 1040,
+            "target_slot": 12,
+            "type": "VAE"
+          },
+          {
+            "id": 2308,
+            "origin_id": 1037,
+            "origin_slot": 17,
+            "target_id": 1040,
+            "target_slot": 13,
+            "type": "STRING"
+          }
+        ],
+        "floatingLinks": [
+          {
+            "id": 2321,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": -1,
+            "target_slot": -1,
+            "type": "IMAGESAVER_PIPE",
+            "parentId": 744
+          }
+        ],
+        "reroutes": [
+          {
+            "id": 742,
+            "pos": [
+              -1920,
+              1504
+            ],
+            "linkIds": [
+              1995
+            ]
+          },
+          {
+            "id": 743,
+            "parentId": 742,
+            "pos": [
+              -1680,
+              1504
+            ],
+            "linkIds": [
+              1995
+            ]
+          },
+          {
+            "id": 744,
+            "pos": [
+              -2140,
+              1704
+            ],
+            "linkIds": [],
+            "floating": {
+              "slotType": "output"
+            }
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Prompts",
+        "description": "Qwen Image 2.1 prompt with extra image input. Image1 is taken from pipeline"
+      }
+    ]
+  },
+  "extra": {}
+}
+

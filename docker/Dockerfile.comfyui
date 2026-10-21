@@ -34,6 +34,8 @@ COPY comfy.settings.json.override /opt/comfyui/user/default/comfy.settings.json
 
 FROM comfyui_dl AS comfyui_ext
 
+COPY comfy-ext /opt/comfyui/custom_nodes/zjstraus-container-package
+
 ADD https://github.com/Fannovel16/comfyui_controlnet_aux.git /opt/comfyui/custom_nodes/comfyui_controlnet_aux
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/comfyui_controlnet_aux/requirements.txt
 

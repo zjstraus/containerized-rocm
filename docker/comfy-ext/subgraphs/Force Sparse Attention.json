@@ -1,0 +1,826 @@
+{
+  "revision": 0,
+  "last_node_id": "1036",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1036,
+      "type": "6c8963c9-ae3f-4612-a21e-6d6a058fcf8a",
+      "pos": [
+        -50,
+        1840
+      ],
+      "size": [
+        210,
+        130
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "title": "Force Sparse Attention"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "6c8963c9-ae3f-4612-a21e-6d6a058fcf8a",
+        "version": 1,
+        "state": {
+          "lastGroupId": 32,
+          "lastNodeId": 1036,
+          "lastLinkId": 2296,
+          "lastRerouteId": 741
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Force Sparse Attention",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -3128,
+            776,
+            128,
+            88
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            -2160,
+            790,
+            128,
+            88
+          ]
+        },
+        "inputs": [
+          {
+            "id": "32f15780-ddaa-4f88-aaf4-241a0255a0a4",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2290
+            ],
+            "label": "Context",
+            "pos": [
+              -3024,
+              800
+            ]
+          },
+          {
+            "id": "7d65b066-6a8f-44af-8031-2f15f3bee599",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2294
+            ],
+            "label": "Metadata",
+            "pos": [
+              -3024,
+              820
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "2b3c373a-9fb5-4b4a-b33e-cf1b89b69afa",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              2293
+            ],
+            "label": "Context",
+            "pos": [
+              -2136,
+              814
+            ]
+          },
+          {
+            "id": "3b521d36-43c6-4a75-a0d9-08bd93cb5633",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              2295
+            ],
+            "label": "Metadata",
+            "pos": [
+              -2136,
+              834
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 601,
+            "type": "BlockSparseAttention",
+            "pos": [
+              -2730,
+              660
+            ],
+            "size": [
+              270,
+              250
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 2296
+              },
+              {
+                "localized_name": "method",
+                "name": "selection",
+                "type": "COMFY_DYNAMICCOMBO_V3",
+                "widget": {
+                  "name": "selection"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "tau",
+                "name": "selection.tau",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "selection.tau"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "start_percent",
+                "name": "start_percent",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "start_percent"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "end_percent",
+                "name": "end_percent",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "end_percent"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "dense_blocks",
+                "name": "dense_blocks",
+                "type": "STRING",
+                "widget": {
+                  "name": "dense_blocks"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "min_tokens",
+                "name": "min_tokens",
+                "type": "INT",
+                "widget": {
+                  "name": "min_tokens"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "extra_tokens",
+                "name": "extra_tokens",
+                "type": "INT",
+                "widget": {
+                  "name": "extra_tokens"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "sink_conditioning",
+                "name": "sink_conditioning",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sink_conditioning"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "verbose",
+                "name": "verbose",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "verbose"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  2292
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "BlockSparseAttention"
+            },
+            "widgets_values": [
+              "sol-attn",
+              1.3,
+              0.2,
+              1,
+              "",
+              12288,
+              256,
+              "exact_kv_and_rows",
+              false
+            ],
+            "widgets_values_named": {
+              "selection": "sol-attn",
+              "selection.tau": 1.3,
+              "start_percent": 0.2,
+              "end_percent": 1,
+              "dense_blocks": "",
+              "min_tokens": 12288,
+              "extra_tokens": 256,
+              "sink_conditioning": "exact_kv_and_rows",
+              "verbose": false
+            }
+          },
+          {
+            "id": 1033,
+            "type": "Context (rgthree)",
+            "pos": [
+              -2990,
+              590
+            ],
+            "size": [
+              240,
+              190
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 2290
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  2291
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": [
+                  2296
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 1034,
+            "type": "Context (rgthree)",
+            "pos": [
+              -2440,
+              590
+            ],
+            "size": [
+              240,
+              190
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 2291
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": 2292
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  2293
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 1035,
+            "type": "Edit Image Saver Pipe",
+            "pos": [
+              -2780,
+              980
+            ],
+            "size": [
+              400,
+              470
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 2294
+              },
+              {
+                "localized_name": "counter",
+                "name": "counter",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "scheduler_name",
+                "name": "scheduler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "clip_skip",
+                "name": "clip_skip",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "filename",
+                "name": "filename",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "filename"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "path",
+                "name": "path",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "path"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "modelname",
+                "name": "modelname",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "modelname"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "positive"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "negative"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "additional_hashes",
+                "name": "additional_hashes",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "additional_hashes"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "custom",
+                "name": "custom",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "custom"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  2295
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Edit Image Saver Pipe"
+            },
+            "widgets_values": [
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]"
+            ],
+            "widgets_values_named": {
+              "filename": "[original]",
+              "path": "[original]",
+              "modelname": "[original]",
+              "positive": "[original]",
+              "negative": "[original]",
+              "additional_hashes": "[original]",
+              "custom": "[original]"
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 2290,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 1033,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2291,
+            "origin_id": 1033,
+            "origin_slot": 0,
+            "target_id": 1034,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2292,
+            "origin_id": 601,
+            "origin_slot": 0,
+            "target_id": 1034,
+            "target_slot": 1,
+            "type": "MODEL"
+          },
+          {
+            "id": 2293,
+            "origin_id": 1034,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 2294,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 1035,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 2295,
+            "origin_id": 1035,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 2296,
+            "origin_id": 1033,
+            "origin_slot": 1,
+            "target_id": 601,
+            "target_slot": 0,
+            "type": "MODEL"
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Pipeline/Configuration",
+        "description": "Apply attention to pipeline model"
+      }
+    ]
+  },
+  "extra": {}
+}

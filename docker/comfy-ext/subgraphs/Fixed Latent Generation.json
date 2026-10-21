@@ -1,0 +1,1154 @@
+{
+  "revision": 0,
+  "last_node_id": "955",
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 955,
+      "type": "a7cc30ee-18a9-41e7-800e-fab4e97b53e3",
+      "pos": [
+        170,
+        310
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Context",
+          "name": "base_ctx",
+          "type": "RGTHREE_CONTEXT",
+          "link": null
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "link": null
+        },
+        {
+          "label": "AspectRatio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "label": "Megapixels",
+          "name": "megapixels",
+          "type": "FLOAT",
+          "widget": {
+            "name": "megapixels"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Context",
+          "name": "CONTEXT",
+          "type": "RGTHREE_CONTEXT",
+          "links": []
+        },
+        {
+          "label": "Metadata",
+          "name": "pipe",
+          "type": "IMAGESAVER_PIPE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "3:4 (Portrait Standard)",
+        1
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "3:4 (Portrait Standard)",
+        "megapixels": 1
+      },
+      "title": "Fixed Latent Generation"
+    }
+  ],
+  "links": [],
+  "version": 0.4,
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "a7cc30ee-18a9-41e7-800e-fab4e97b53e3",
+        "version": 1,
+        "state": {
+          "lastGroupId": 32,
+          "lastNodeId": 955,
+          "lastLinkId": 2140,
+          "lastRerouteId": 629
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Fixed Latent Generation",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            3237,
+            -1154,
+            128,
+            128
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            4400,
+            -1180,
+            128,
+            88
+          ]
+        },
+        "inputs": [
+          {
+            "id": "4231a150-6997-440d-b774-817fc1e93e41",
+            "name": "base_ctx",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              1400
+            ],
+            "label": "Context",
+            "pos": [
+              3341,
+              -1130
+            ]
+          },
+          {
+            "id": "68e13c27-9b9d-493a-bb2d-a0341da92286",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              1402
+            ],
+            "label": "Metadata",
+            "pos": [
+              3341,
+              -1110
+            ]
+          },
+          {
+            "id": "57095abb-f986-43a7-978c-6f1853ea340b",
+            "name": "aspect_ratio",
+            "type": "COMBO",
+            "linkIds": [
+              1406
+            ],
+            "label": "AspectRatio",
+            "pos": [
+              3341,
+              -1090
+            ]
+          },
+          {
+            "id": "4c35eea4-00e8-4689-9512-a85e1e45b477",
+            "name": "megapixels",
+            "type": "FLOAT",
+            "linkIds": [
+              1407
+            ],
+            "label": "Megapixels",
+            "pos": [
+              3341,
+              -1070
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "675f65d4-c048-446f-a7f9-923367e0bcc1",
+            "name": "CONTEXT",
+            "type": "RGTHREE_CONTEXT",
+            "linkIds": [
+              1401
+            ],
+            "label": "Context",
+            "pos": [
+              4424,
+              -1156
+            ]
+          },
+          {
+            "id": "c0e70de5-5018-4d99-a056-ed83c797b5be",
+            "name": "pipe",
+            "type": "IMAGESAVER_PIPE",
+            "linkIds": [
+              1403
+            ],
+            "label": "Metadata",
+            "pos": [
+              4424,
+              -1136
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 659,
+            "type": "EmptyLatentImage",
+            "pos": [
+              3860,
+              -1110
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 1396
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 1397
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "widget": {
+                  "name": "batch_size"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  1399
+                ]
+              }
+            ],
+            "title": "Final Image Size",
+            "properties": {
+              "Node name for S&R": "EmptyLatentImage",
+              "cnr_id": "comfy-core",
+              "ver": "0.19.3"
+            },
+            "widgets_values": [
+              1024,
+              1024,
+              1
+            ],
+            "widgets_values_named": {
+              "width": 1024,
+              "height": 1024,
+              "batch_size": 1
+            }
+          },
+          {
+            "id": 658,
+            "type": "ResolutionSelector",
+            "pos": [
+              3440,
+              -1090
+            ],
+            "size": [
+              270,
+              190
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "Aspect Ratio",
+                "localized_name": "aspect_ratio",
+                "name": "aspect_ratio",
+                "type": "COMBO",
+                "widget": {
+                  "name": "aspect_ratio"
+                },
+                "link": 1406
+              },
+              {
+                "localized_name": "megapixels",
+                "name": "megapixels",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "megapixels"
+                },
+                "link": 1407
+              },
+              {
+                "localized_name": "multiple",
+                "name": "multiple",
+                "type": "INT",
+                "widget": {
+                  "name": "multiple"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "preview",
+                "name": "preview",
+                "shape": 7,
+                "type": "RESOLUTION_PREVIEW",
+                "widget": {
+                  "name": "preview"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "links": [
+                  1396,
+                  1405
+                ]
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "links": [
+                  1397,
+                  1404
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ResolutionSelector"
+            },
+            "widgets_values": [
+              "3:4 (Portrait Standard)",
+              1,
+              8
+            ],
+            "widgets_values_named": {
+              "aspect_ratio": "3:4 (Portrait Standard)",
+              "megapixels": 1,
+              "multiple": 8
+            }
+          },
+          {
+            "id": 661,
+            "type": "Context Big (rgthree)",
+            "pos": [
+              3860,
+              -1620
+            ],
+            "size": [
+              310,
+              470
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "dir": 3,
+                "name": "base_ctx",
+                "type": "RGTHREE_CONTEXT",
+                "link": 1400
+              },
+              {
+                "dir": 3,
+                "name": "model",
+                "type": "MODEL",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "vae",
+                "type": "VAE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "latent",
+                "type": "LATENT",
+                "link": 1399
+              },
+              {
+                "dir": 3,
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "seed",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "steps",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "step_refiner",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "cfg",
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "ckpt_name",
+                "type": [
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "sampler",
+                "type": [
+                  "euler",
+                  "euler_cfg_pp",
+                  "euler_ancestral",
+                  "euler_ancestral_cfg_pp",
+                  "heun",
+                  "heunpp2",
+                  "exp_heun_2_x0",
+                  "exp_heun_2_x0_sde",
+                  "dpm_2",
+                  "dpm_2_ancestral",
+                  "lms",
+                  "dpm_fast",
+                  "dpm_adaptive",
+                  "dpmpp_2s_ancestral",
+                  "dpmpp_2s_ancestral_cfg_pp",
+                  "dpmpp_sde",
+                  "dpmpp_sde_gpu",
+                  "dpmpp_2m",
+                  "dpmpp_2m_cfg_pp",
+                  "dpmpp_2m_sde",
+                  "dpmpp_2m_sde_gpu",
+                  "dpmpp_2m_sde_heun",
+                  "dpmpp_2m_sde_heun_gpu",
+                  "dpmpp_3m_sde",
+                  "dpmpp_3m_sde_gpu",
+                  "ddpm",
+                  "lcm",
+                  "ipndm",
+                  "ipndm_v",
+                  "deis",
+                  "cfgpp_ud10_ab",
+                  "res_multistep",
+                  "res_multistep_cfg_pp",
+                  "res_multistep_ancestral",
+                  "res_multistep_ancestral_cfg_pp",
+                  "gradient_estimation",
+                  "gradient_estimation_cfg_pp",
+                  "er_sde",
+                  "seeds_2",
+                  "seeds_3",
+                  "sa_solver",
+                  "sa_solver_pece",
+                  "ddim",
+                  "uni_pc",
+                  "uni_pc_bh2"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "scheduler",
+                "type": [
+                  "simple",
+                  "sgm_uniform",
+                  "karras",
+                  "exponential",
+                  "ddim_uniform",
+                  "beta",
+                  "normal",
+                  "linear_quadratic",
+                  "kl_optimal"
+                ],
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_width",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "clip_height",
+                "type": "INT",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_pos_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_g",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "text_neg_l",
+                "type": "STRING",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "mask",
+                "type": "MASK",
+                "link": null
+              },
+              {
+                "dir": 3,
+                "name": "control_net",
+                "type": "CONTROL_NET",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "dir": 4,
+                "name": "CONTEXT",
+                "shape": 3,
+                "type": "RGTHREE_CONTEXT",
+                "links": [
+                  1401
+                ]
+              },
+              {
+                "dir": 4,
+                "name": "MODEL",
+                "shape": 3,
+                "type": "MODEL",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP",
+                "shape": 3,
+                "type": "CLIP",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "VAE",
+                "shape": 3,
+                "type": "VAE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "POSITIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "NEGATIVE",
+                "shape": 3,
+                "type": "CONDITIONING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "LATENT",
+                "shape": 3,
+                "type": "LATENT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "IMAGE",
+                "shape": 3,
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SEED",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEPS",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "STEP_REFINER",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CFG",
+                "shape": 3,
+                "type": "FLOAT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CKPT_NAME",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SAMPLER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "SCHEDULER",
+                "shape": 3,
+                "type": "COMBO",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_WIDTH",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CLIP_HEIGHT",
+                "shape": 3,
+                "type": "INT",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_POS_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_G",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "TEXT_NEG_L",
+                "shape": 3,
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK",
+                "links": null
+              },
+              {
+                "dir": 4,
+                "name": "CONTROL_NET",
+                "shape": 3,
+                "type": "CONTROL_NET",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 662,
+            "type": "Edit Image Saver Pipe",
+            "pos": [
+              3860,
+              -920
+            ],
+            "size": [
+              400,
+              470
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "link": 1402
+              },
+              {
+                "localized_name": "counter",
+                "name": "counter",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "shape": 7,
+                "type": "INT",
+                "link": 1405
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "shape": 7,
+                "type": "INT",
+                "link": 1404
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "scheduler_name",
+                "name": "scheduler_name",
+                "shape": 7,
+                "type": "COMBO",
+                "link": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "localized_name": "clip_skip",
+                "name": "clip_skip",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "filename",
+                "name": "filename",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "filename"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "path",
+                "name": "path",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "path"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "modelname",
+                "name": "modelname",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "modelname"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "positive"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "negative"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "additional_hashes",
+                "name": "additional_hashes",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "additional_hashes"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "custom",
+                "name": "custom",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "custom"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "pipe",
+                "name": "pipe",
+                "type": "IMAGESAVER_PIPE",
+                "links": [
+                  1403
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Edit Image Saver Pipe"
+            },
+            "widgets_values": [
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]",
+              "[original]"
+            ],
+            "widgets_values_named": {
+              "filename": "[original]",
+              "path": "[original]",
+              "modelname": "[original]",
+              "positive": "[original]",
+              "negative": "[original]",
+              "additional_hashes": "[original]",
+              "custom": "[original]"
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 1396,
+            "origin_id": 658,
+            "origin_slot": 0,
+            "target_id": 659,
+            "target_slot": 0,
+            "type": "INT",
+            "parentId": 210
+          },
+          {
+            "id": 1397,
+            "origin_id": 658,
+            "origin_slot": 1,
+            "target_id": 659,
+            "target_slot": 1,
+            "type": "INT",
+            "parentId": 208
+          },
+          {
+            "id": 1399,
+            "origin_id": 659,
+            "origin_slot": 0,
+            "target_id": 661,
+            "target_slot": 6,
+            "type": "LATENT",
+            "parentId": 216
+          },
+          {
+            "id": 1400,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 661,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 1401,
+            "origin_id": 661,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "RGTHREE_CONTEXT"
+          },
+          {
+            "id": 1402,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 662,
+            "target_slot": 0,
+            "type": "IMAGESAVER_PIPE",
+            "parentId": 207
+          },
+          {
+            "id": 1403,
+            "origin_id": 662,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGESAVER_PIPE"
+          },
+          {
+            "id": 1404,
+            "origin_id": 658,
+            "origin_slot": 1,
+            "target_id": 662,
+            "target_slot": 3,
+            "type": "INT",
+            "parentId": 209
+          },
+          {
+            "id": 1405,
+            "origin_id": 658,
+            "origin_slot": 0,
+            "target_id": 662,
+            "target_slot": 2,
+            "type": "INT",
+            "parentId": 211
+          },
+          {
+            "id": 1406,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 658,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1407,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 658,
+            "target_slot": 1,
+            "type": "FLOAT"
+          }
+        ],
+        "reroutes": [
+          {
+            "id": 207,
+            "parentId": 212,
+            "pos": [
+              3730,
+              -906
+            ],
+            "linkIds": [
+              1402
+            ]
+          },
+          {
+            "id": 208,
+            "pos": [
+              3780,
+              -1056
+            ],
+            "linkIds": [
+              1397,
+              1404
+            ]
+          },
+          {
+            "id": 209,
+            "parentId": 208,
+            "pos": [
+              3780,
+              -846
+            ],
+            "linkIds": [
+              1404
+            ]
+          },
+          {
+            "id": 210,
+            "pos": [
+              3800,
+              -1076
+            ],
+            "linkIds": [
+              1396,
+              1405
+            ]
+          },
+          {
+            "id": 211,
+            "parentId": 210,
+            "pos": [
+              3800,
+              -866
+            ],
+            "linkIds": [
+              1405
+            ]
+          },
+          {
+            "id": 212,
+            "parentId": 213,
+            "pos": [
+              3730,
+              -876
+            ],
+            "linkIds": [
+              1402
+            ]
+          },
+          {
+            "id": 213,
+            "pos": [
+              3420,
+              -876
+            ],
+            "linkIds": [
+              1402
+            ]
+          },
+          {
+            "id": 214,
+            "parentId": 217,
+            "pos": [
+              4160,
+              -1146
+            ],
+            "linkIds": [
+              1399
+            ]
+          },
+          {
+            "id": 215,
+            "parentId": 214,
+            "pos": [
+              3820,
+              -1146
+            ],
+            "linkIds": [
+              1399
+            ]
+          },
+          {
+            "id": 216,
+            "parentId": 215,
+            "pos": [
+              3820,
+              -1486
+            ],
+            "linkIds": [
+              1399
+            ]
+          },
+          {
+            "id": 217,
+            "pos": [
+              4160,
+              -1096
+            ],
+            "linkIds": [
+              1399
+            ]
+          }
+        ],
+        "extra": {},
+        "category": "zjstraus/Pipeline/Configuration",
+        "description": "Create a latent by aspect ratio and pixel count"
+      }
+    ]
+  },
+  "extra": {}
+}
