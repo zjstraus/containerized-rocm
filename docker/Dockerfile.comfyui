@@ -64,6 +64,9 @@ ADD https://github.com/iGavroche/rocm-ninodes.git /opt/comfyui/custom_nodes/Comf
 RUN --mount=type=cache,target=/root/.cache/pip /bin/bash -c "cd /opt/comfyui/custom_nodes/ComfyUI-ROCM-Optimized-VAE; python install.py"
 RUN rm /opt/comfyui/custom_nodes/ComfyUI-ROCM-Optimized-VAE/rocm_nodes.py
 
+ADD https://github.com/godmt/comfyui-openai-llm.git /opt/comfyui/custom_nodes/comfyui-openai-llm
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r /opt/comfyui/custom_nodes/comfyui-openai-llm/requirements.txt
+
 ADD https://github.com/Alectriciti/comfyui-adaptiveprompts.git /opt/comfyui/custom_nodes/comfyui-adaptiveprompts
 ADD https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git /opt/comfyui/custom_nodes/ComfyUI-Custom-Scripts
 ADD https://github.com/Smirnov75/ComfyUI-mxToolkit.git /opt/comfyui/custom_nodes/ComfyUI-mxToolkit
@@ -73,6 +76,7 @@ ADD https://github.com/TinyTerra/ComfyUI_tinyterraNodes.git /opt/comfyui/custom_
 ADD https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /opt/comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
 ADD https://github.com/embedding-shapes/ComfyUI-SweepGrid.git /opt/comfyui/custom_nodes/ComfyUI-SweepGrid
 ADD https://github.com/Flibens/comfyui-image-browser.git /opt/comfyui/custom_nodes/comfyui-image-browser
+ADD https://github.com/wutipong/ComfyUI-TextUtils.git /opt/comfyui/custom_nodes/ComfyUI-TextUtils
 
 FROM comfyui_ext
 
