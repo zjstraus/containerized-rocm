@@ -65,12 +65,12 @@ if [[ -z "$LLAMACPP_TAG" ]]; then
 fi
 echo "Image will build llama.cpp $LLAMACPP_TAG" >&2
 if [[ -z "$LLAMACPP_BOOSTS_TAG" ]]; then
-  LLAMACPP_BOOSTS_TAG=v12-097cf33d9-r65
+  LLAMACPP_BOOSTS_TAG=v14-097cf33d9-r120
 fi
 echo "Image will build llama-cpp-rdna-boosts $LLAMACPP_BOOSTS_TAG" >&2
 
 if [[ -z "$COMFYUI_TAG" ]]; then
-  COMFYUI_TAG=v0.42.1
+  COMFYUI_TAG=v0.42.5
 fi
 echo "Image will build comfyui $COMFYUI_TAG" >&2
 
